@@ -1,5 +1,5 @@
-<div align="center" text>
- <h1 style = "color:blue"><b></b>PROJECT 06 : Koi-Delivery-Ordering-System</b></h1>
+<div align="center" style = "color:blue">
+ <h1 ><b>PROJECT 06 : Koi-Delivery-Ordering-System</b></h1>
  </div>  
 
 # Project Team Members
