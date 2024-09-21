@@ -1,7 +1,8 @@
-# Koi-Delivery-Ordering-System
-Nhóm H - đề tài 3:  Koi Delivery Ordering System (Phần mềm quản lý đặt vận chuyển cá Koi)
-# Project Team Members
+<div align="center" text>
+ <h1><b></b>PROJECT 06 : Koi-Delivery-Ordering-System</b></h1>
+ </div>  
 
+<h2>Project Team Members</h2>
 | No | ID           | Name                         |
 |----|--------------|------------------------------|
 | 01 | 89205021773  | Huỳnh Tiến Đạt               |
