@@ -101,3 +101,102 @@ Phần mềm quản lý đặt vận chuyển cá Koi là một ứng dụng gi�
 - **Người dùng:** Trần Thị B
 - **Mô tả:** B nhận đơn hàng từ A, xác nhận thông tin và chuẩn bị hàng hóa cho việc giao. Nếu đơn hàng là vận chuyển quốc tế, B sẽ chuẩn bị các giấy tờ cần thiết và quy trình xuất khẩu.
 
+### Giao hàng trong nước
+- **Người dùng:** Lê Văn C
+- **Mô tả:** C nhận thông báo về đơn hàng có mã đơn cụ thể để giao. Anh kiểm tra thông tin và giao hàng đến địa chỉ đã xác định.
+
+### Hỗ trợ chăm sóc cá
+- **Người dùng:** Nguyễn Văn A
+- **Mô tả:** Sau khi cá được giao, A nhận được thông tin và hướng dẫn chăm sóc cá Koi để thích nghi với môi trường mới.
+
+### Quản lý doanh thu và phản hồi
+- **Người dùng:** Phạm Minh D
+- **Mô tả:** D kiểm tra doanh thu từ các đơn hàng, đánh giá phản hồi từ khách hàng và thực hiện các điều chỉnh cần thiết cho dịch vụ.
+
+---
+
+## **User Stories**
+
+### Người dùng: Nguyễn Văn A
+
+#### User Story 1: Đăng nhập/Đăng ký
+- **Mô tả:** Như một khách hàng, tôi muốn có khả năng đăng nhập hoặc đăng ký tài khoản để sử dụng dịch vụ.
+- **Tiêu chí chấp nhận:**
+  - Tôi có thể tạo tài khoản mới hoặc đăng nhập vào tài khoản đã có.
+  - Tôi nhận được thông báo xác nhận khi đăng ký thành công.
+
+#### User Story 2: Đặt đơn vận chuyển
+- **Mô tả:** Như một khách hàng, tôi muốn có khả năng đặt đơn vận chuyển cá Koi theo khối lượng và địa điểm để dễ dàng quản lý vận chuyển.
+- **Tiêu chí chấp nhận:**
+  - Tôi có thể chọn dịch vụ vận chuyển trong nước hoặc quốc tế.
+  - Tôi có thể điền thông tin về số lượng và khối lượng cá Koi.
+  - Tôi nhận được xác nhận đơn hàng ngay sau khi đặt.
+
+#### User Story 3: Theo dõi đơn hàng
+- **Mô tả:** Như một khách hàng, tôi muốn theo dõi tình trạng đơn hàng của mình để biết được khi nào cá Koi sẽ đến tay.
+- **Tiêu chí chấp nhận:**
+  - Tôi có thể xem tình trạng vận chuyển (đang chuẩn bị, đang giao, đã giao).
+  - Tôi nhận được thông báo cập nhật qua email hoặc ứng dụng.
+
+#### User Story 4: Đánh giá dịch vụ
+- **Mô tả:** Như một khách hàng, tôi muốn có khả năng đánh giá và để lại phản hồi về dịch vụ sau khi nhận hàng để giúp cải thiện chất lượng dịch vụ.
+- **Tiêu chí chấp nhận:**
+  - Tôi có thể chọn mức đánh giá từ 1 đến 5.
+  - Tôi có thể để lại nhận xét chi tiết về trải nghiệm của mình.
+
+### Người dùng: Trần Thị B
+
+#### User Story 5: Xác nhận đơn hàng
+- **Mô tả:** Như một nhân viên bán hàng, tôi muốn xác nhận đơn hàng và chuẩn bị hàng hóa để đảm bảo giao hàng đúng hẹn.
+- **Tiêu chí chấp nhận:**
+  - Tôi có thể xem thông tin chi tiết về đơn hàng.
+  - Tôi có thể ghi nhận các yêu cầu đặc biệt của khách hàng.
+
+### Người dùng: Lê Văn C
+
+#### User Story 6: Nhận thông báo giao hàng
+- **Mô tả:** Như một nhân viên giao hàng, tôi muốn nhận thông báo về đơn hàng cần giao để có thể chuẩn bị tốt hơn.
+- **Tiêu chí chấp nhận:**
+  - Tôi nhận được thông báo chi tiết về đơn hàng và địa điểm giao hàng.
+  - Tôi có thể cập nhật tình trạng giao hàng trong ứng dụng.
+
+#### User Story 7: Cập nhật tình trạng đơn hàng
+- **Mô tả:** Như một nhân viên giao hàng, tôi muốn cập nhật tình trạng cá và quy trình giao hàng để đảm bảo khách hàng có thể biết rõ chi tiết đơn hàng trong quá trình vận chuyển.
+- **Tiêu chí chấp nhận:**
+  - Tôi có thể ghi nhận tình trạng cá (khỏe mạnh, cần chăm sóc thêm).
+  - Tôi có thể ghi chú các vấn đề phát sinh trong quá trình giao hàng.
+
+### Người dùng: Phạm Minh D
+
+#### User Story 8: Quản lý doanh thu và phản hồi
+- **Mô tả:** Như một quản lý, tôi muốn có báo cáo về doanh thu và phản hồi từ khách hàng để có thể đưa ra giải pháp mới.
+- **Tiêu chí chấp nhận:**
+  - Tôi có thể xem báo cáo tổng quan về doanh thu.
+  - Tôi có thể đọc và phân tích phản hồi từ khách hàng để cải thiện dịch vụ.
+
+#### User Story 9: Theo dõi hiệu suất nhân viên
+- **Mô tả:** Như một quản lý, tôi muốn theo dõi hiệu suất làm việc của từng nhân viên để có thể đánh giá và khuyến khích họ cải thiện.
+- **Tiêu chí chấp nhận:**
+  - Tôi có thể xem báo cáo về số lượng đơn hàng mà mỗi nhân viên đã xử lý.
+  - Tôi có thể đọc các phản hồi từ khách hàng về nhân viên để đánh giá chất lượng dịch vụ.
+
+#### User Story 10: Quản lý bảng giá dịch vụ
+- **Mô tả:** Như một quản lý, tôi muốn có khả năng cập nhật bảng giá dịch vụ để đảm bảo tính cạnh tranh và hiệu quả.
+- **Tiêu chí chấp nhận:**
+  - Tôi có thể thêm, sửa hoặc xóa các mục trong bảng giá dịch vụ.
+  - Tôi nhận được thông báo xác nhận khi bảng giá được cập nhật thành công.
+
+ ## **Tính năng**
+
+- Đăng nhập/Đăng ký tài khoản.
+- Xem các dịch vụ vận chuyển và bảng giá.
+- Tìm hiểu các chính sách liên quan đến vận chuyển.
+- Đặt đơn vận chuyển với thông tin chi tiết (khối lượng, địa điểm, phương thức,).
+- Để lại phản hồi và đánh giá dịch vụ.
+- Xem danh sách đơn hàng và tình trạng xử lý.
+- Xác nhận và chuẩn bị đơn hàng.
+- Theo dõi đơn hàng và tình trạng vận chuyển.
+- Cập nhật tình trạng vận chuyển (quy trình giao hàng và tình trạng cá).
+- Xem dashboard tổng quan về hoạt động kinh doanh.
+- Quản lý lịch sử đơn hàng và hồ sơ khách hàng.
+- Ghi nhận và xử lý phản hồi từ khách hàng.
