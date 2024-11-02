@@ -6,12 +6,12 @@
 
 | No | ID           | Name                         |
 |----|--------------|------------------------------|
-| 01 | 89205021773  | Huỳnh Tiến Đạt               |
-| 02 | 75205017046  | Nguyễn Văn Minh Giang        |
-| 03 | 86205004169  | Đặng Thiên Phúc              |
-| 04 | 70205002584  | Nguyễn Hữu Thưởng            |
-| 05 | 58205004058  | Bá Trung Tín                 |
-| 06 | 14305002798  | Hoàng Đinh Minh Trinh        |
+| 01 | 089205021773  | Huỳnh Tiến Đạt               |
+| 02 | 075205017046  | Nguyễn Văn Minh Giang        |
+| 03 | 086205004169  | Đặng Thiên Phúc              |
+| 04 | 070205002584  | Nguyễn Hữu Thưởng            |
+| 05 | 058205004058  | Bá Trung Tín                 |
+| 06 | 014305002798  | Hoàng Đinh Minh Trinh        |
 
 ---
 
