@@ -1,0 +1,52 @@
+﻿@page
+@model quanlyvanchuyencakoi.web3.Pages.Admin.Shipper.IndexModel
+@{
+}
+
+
+<div class="container mt-5" style="width: 100%;">
+    <h2>@ViewData["Title"]</h2>
+    <div class="col end-0">
+        <a asp-page="Create" class="btn btn-primary">Add New Shipper</a>
+    </div>
+    <div>
+        <table class="table table-hover table-responsive text-dark">
+            <thead>
+                <tr>
+                    <th>Id Shipper</th>
+                    <th>Name Shipper</th>
+                    <th>Phone Number</th>
+                    <th>Image</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null && Model.shipper.Any())
+                {
+                    @foreach (var shipper in Model.shipper)
+                    {
+                        <tr>
+                            <td>@shipper.IdShipper</td>
+                            <td>@shipper.NameShipper</td>
+                            <td>@shipper.PhoneShipper</td>
+                            <td>
+                                <!-- Sử dụng thẻ <img> để hiển thị ảnh -->
+                                <img src="@shipper.ImgShipper" alt="Shipper Image" style="width: 30px; height: 30px;" />
+                            </td>
+                            <td>
+                                <a asp-page="./Edit" asp-route-itemid="@shipper.IdShipper" class="btn btn-warning">Edit</a>
+                                <a asp-page="./Delete" asp-route-itemid="@shipper.IdShipper" class="btn btn-danger">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="5" class="text-center">Không có dữ liệu người dùng</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

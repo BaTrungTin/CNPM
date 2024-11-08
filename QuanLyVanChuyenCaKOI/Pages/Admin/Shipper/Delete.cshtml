@@ -1,0 +1,42 @@
+﻿@page
+@model quanlyvanchuyencakoi.web3.Pages.Admin.Shipper.DeleteModel
+@{
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<h3>Bạn có chắc chắn muốn xóa shipper này không?</h3>
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">
+            Id 
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Shipper.IdShipper
+        </dd>
+        <dt class="col-sm-2">
+            Name
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Shipper.NameShipper
+        </dd>
+        <dt class="col-sm-2">
+            Phone
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Shipper.PhoneShipper
+        </dd>
+        <dt class="col-sm-2">
+            Image
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Shipper.ImgShipper
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Shipper.IdShipper" />
+        <button type="submit" class="btn btn-danger">Delete</button>
+        <a asp-page="./Index" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
