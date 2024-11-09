@@ -1,0 +1,78 @@
+body {
+    font-family: "Verdana", cursive;
+}
+
+.tracking-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.tracking-table th, .tracking-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.tracking-table th {
+    background-color: #1a73e8;
+    color: white;
+}
+
+.tracking-table td {
+    background-color: #f9f9f9;
+}
+
+.tracking-table tr:hover td {
+    background-color: #e0f7fa;
+}
+
+.btn-cancel {
+    background-color: #ff5c8d;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-cancel:hover {
+    background-color: #e04f72;
+    transform: scale(1.05);
+}
+
+.btn-cancel:active {
+    background-color: #c94360;
+    transform: scale(1);
+}
+
+/* Responsive CSS */
+@media (max-width: 768px) {
+    .tracking-table {
+        font-size: 12px;
+    }
+
+    .tracking-table th, .tracking-table td {
+        padding: 8px;
+    }
+
+    .btn-cancel {
+        font-size: 12px;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 576px) {
+    .tracking-table th, .tracking-table td {
+        font-size: 10px;
+        padding: 5px;
+    }
+
+    .btn-cancel {
+        font-size: 10px;
+        padding: 6px 12px;
+    }
+}

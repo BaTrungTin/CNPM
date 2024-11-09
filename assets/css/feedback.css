@@ -1,0 +1,58 @@
+.customer-feedback {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+ }
+ thead{
+    background-color: greenyellow;
+ }
+ h2 {
+    color:white;
+ }
+ 
+ .feedback-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+ }
+ 
+ .feedback-table th, .feedback-table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+ }
+ 
+ .feedback-table th {
+    background-color: #4CAF50;
+    color: white;
+ }
+ 
+ .feedback-table td button {
+    padding: 5px 10px;
+    margin: 5px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+ }
+ 
+ .view-btn {
+    background-color: #007bff;
+    color: white;
+ }
+ 
+ .view-btn:hover {
+    background-color: #0056b3;
+ }
+ 
+ .delete-btn {
+    background-color: #dc3545;
+    color: white;
+ }
+ 
+ .delete-btn:hover {
+    background-color: #c82333;
+ }
+ .customer-feedback >h2{
+    color: black;
+ }

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+   <html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <!--=============== REMIXICONS ===============-->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
+
+      <!--=============== CSS ===============-->
+      <link rel="stylesheet" href="../assets/css/barstyle.css">
+      <link rel="stylesheet" href="../assets/css/home.css">
+      <link rel="stylesheet" href="../assets/css/qlnv.css">
+
+      <title>Quản lý nhân viên</title>
+    <!--=============bootstrap================-->
+ 
+    </head>
+   <body>
+      <!--=============== HEADER ===============-->
+      <header class="header" id="header">
+         <div class="header__container">
+            <a href="#" class="header__logo">
+               <i class="ri-cloud-fill"></i>
+               <span>Koi fish</span>
+            </a>
+            
+            <button class="header__toggle" id="header-toggle">
+               <i class="ri-menu-line"></i>
+            </button>
+         </div>
+      </header>
+
+      <!--=============== SIDEBAR ===============-->
+      <nav class="sidebar" id="sidebar">
+         <div class="sidebar__container">
+            <div class="sidebar__user">
+               <div class="sidebar__img">
+                  <img src="../assets/img/perfil.png" alt="image">
+               </div>
+   
+               <div class="sidebar__info">
+                  <h3>admin</h3>
+                  <span>admin@email.com</span>
+               </div>
+            </div>
+
+            <div class="sidebar__content">
+               <div>
+                  <h3 class="sidebar__title">MANAGE</h3>
+
+                  <div class="sidebar__list">
+                     <a href="admin.html" class="sidebar__link">
+                        <i class="ri-pie-chart-2-fill"></i>
+                        <span>Dashboard</span>
+                     </a>
+                     
+                     <a href="qlnv.html" class="sidebar__link active-link">
+                        <i class="ri-wallet-3-fill"></i>
+                        <span>QLNV</span>
+                     </a>
+
+                     <a href="qlkh.html" class="sidebar__link">
+                        <i class="ri-calendar-fill"></i>
+                        <span>QLKH</span>
+                     </a>
+
+                     <a href="feedback.html" class="sidebar__link">
+                        <i class="ri-arrow-up-down-line"></i>
+                        <span> Feedback</span>
+                     </a>
+
+
+                     <a href="health.html" class="sidebar__link">
+                        <i class="ri-bar-chart-box-fill"></i>
+                        <span>Health</span>
+                     </a>
+                  </div>
+               </div>
+
+               <div>
+                  <h3 class="sidebar__title">SETTINGS</h3>
+
+                  <div class="sidebar__list">
+                     <a href="edit.html" class="sidebar__link">
+                        <i class="ri-settings-3-fill"></i>
+                        <span>Settings</span>
+                     </a>
+                  </div>
+               </div>
+            </div>
+
+            <div class="sidebar__actions">
+               
+
+               <button class="sidebar__link">
+                  <i class="ri-logout-box-r-fill"></i>
+                  <span>Log Out</span>
+               </button>
+            </div>
+         </div>
+      </nav>
+
+      <!--=============== MAIN ===============-->
+     
+<main class="main container" id="main">
+   <div class="employee-management">
+       <h2>Quản lý Nhân viên - Dịch vụ Vận chuyển Cá Koi</h2>
+
+       <!-- Nút mở form thêm nhân viên -->
+       <button id="addEmployeeBtn" onclick="openAddEmployeePopup()">Thêm Nhân Viên</button>
+
+       <!-- Pop-up thêm nhân viên -->
+       <div id="addEmployeePopup" class="popup">
+           <div class="popup-content">
+               <span class="close-btn" onclick="closeAddEmployeePopup()">&times;</span>
+               <h3>Thêm Nhân Viên</h3>
+               <form id="employeeForm" onsubmit="addEmployee(event)">
+                   <input type="text" id="name" placeholder="Tên nhân viên" required />
+                   <input type="text" id="position" placeholder="Chức vụ" required />
+                   <input type="text" id="department" placeholder="Phòng ban" required />
+                   <input type="text" id="phone" placeholder="Số điện thoại" required />
+                   <input type="email" id="email" placeholder="Email" required />
+                   <input type="text" id="address" placeholder="Địa chỉ" required />
+                   <button type="submit">Thêm nhân viên</button>
+               </form>
+           </div>
+       </div>
+
+       <!-- Bảng dữ liệu nhân viên -->
+       <div class="employee-table">
+           <table>
+               <thead>
+                   <tr>
+                       <th>ID</th>
+                       <th>Tên</th>
+                       <th>Chức vụ</th>
+                       <th>Phòng ban</th>
+                       <th>Số điện thoại</th>
+                       <th>Email</th>
+                       <th>Địa chỉ</th>
+                       <th>Hành động</th>
+                   </tr>
+               </thead>
+               <tbody id="employeeData">
+                   <!-- Dữ liệu nhân viên sẽ được thêm vào đây -->
+               </tbody>
+           </table>
+       </div>
+   </div>
+
+   <!-- Pop-up sửa nhân viên -->
+   <div id="employeePopup" class="popup">
+       <div class="popup-content">
+           <span class="close-btn" onclick="closeEmployeePopup()">&times;</span>
+           <h3 id="popupTitle">Sửa Nhân Viên</h3>
+           <form id="editEmployeeForm" onsubmit="updateEmployee(event)">
+               <input type="text" id="editName" placeholder="Tên nhân viên" required />
+               <input type="text" id="editPosition" placeholder="Chức vụ" required />
+               <input type="text" id="editDepartment" placeholder="Phòng ban" required />
+               <input type="text" id="editPhone" placeholder="Số điện thoại" required />
+               <input type="email" id="editEmail" placeholder="Email" required />
+               <input type="text" id="editAddress" placeholder="Địa chỉ" required />
+               <button type="submit">Lưu</button>
+           </form>
+       </div>
+   </div>
+</main>
+      
+      <!--=============== MAIN JS ===============-->
+      <script src="../assets/js/main.js"></script>
+      <script>
+           let employees = [];
+    let editIndex = null;
+
+    function openAddEmployeePopup() {
+        document.getElementById("addEmployeePopup").style.display = "flex";
+    }
+
+    function closeAddEmployeePopup() {
+        document.getElementById("addEmployeePopup").style.display = "none";
+    }
+
+    function openEmployeePopup() {
+        document.getElementById("employeePopup").style.display = "flex";
+    }
+
+    function closeEmployeePopup() {
+        document.getElementById("employeePopup").style.display = "none";
+    }
+
+    function addEmployee(event) {
+        event.preventDefault();
+        const employee = {
+            id: employees.length + 1,
+            name: document.getElementById("name").value,
+            position: document.getElementById("position").value,
+            department: document.getElementById("department").value,
+            phone: document.getElementById("phone").value,
+            email: document.getElementById("email").value,
+            address: document.getElementById("address").value
+        };
+        employees.push(employee);
+        renderTable();
+        closeAddEmployeePopup();
+    }
+
+    function renderTable() {
+        const employeeData = document.getElementById("employeeData");
+        employeeData.innerHTML = employees.map((employee, index) => `
+            <tr>
+                <td>${employee.id}</td>
+                <td>${employee.name}</td>
+                <td>${employee.position}</td>
+                <td>${employee.department}</td>
+                <td>${employee.phone}</td>
+                <td>${employee.email}</td>
+                <td>${employee.address}</td>
+                <td class="action-buttons">
+                    <button onclick="editEmployee(${index})">Sửa</button>
+                    <button class="delete-btn" onclick="deleteEmployee(${index})">Xóa</button>
+                </td>
+            </tr>
+        `).join("");
+    }
+
+    function editEmployee(index) {
+        editIndex = index;
+        const employee = employees[index];
+        document.getElementById("editName").value = employee.name;
+        document.getElementById("editPosition").value = employee.position;
+        document.getElementById("editDepartment").value = employee.department;
+        document.getElementById("editPhone").value = employee.phone;
+        document.getElementById("editEmail").value = employee.email;
+        document.getElementById("editAddress").value = employee.address;
+        openEmployeePopup();
+    }
+
+    function updateEmployee(event) {
+        event.preventDefault();
+        employees[editIndex] = {
+            id: employees[editIndex].id,
+            name: document.getElementById("editName").value,
+            position: document.getElementById("editPosition").value,
+            department: document.getElementById("editDepartment").value,
+            phone: document.getElementById("editPhone").value,
+            email: document.getElementById("editEmail").value,
+            address: document.getElementById("editAddress").value
+        };
+        renderTable();
+        closeEmployeePopup();
+    }
+
+    function deleteEmployee(index) {
+        employees.splice(index, 1);
+        renderTable();
+    }
+
+
+      </script>
+   </body>
+</html>

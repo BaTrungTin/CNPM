@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+   <html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <!--=============== REMIXICONS ===============-->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
+
+      <!--=============== CSS ===============-->
+      <link rel="stylesheet" href="../assets/css/barstyle.css">
+      <link rel="stylesheet" href="../assets/css/home.css">
+
+      <title>Dashboard</title>
+   </head>
+   <body>
+      <!--=============== HEADER ===============-->
+      <header class="header" id="header">
+         <div class="header__container">
+            <a href="#" class="header__logo">
+               <i class="ri-cloud-fill"></i>
+               <span>Koi fish</span>
+            </a>
+            
+            <button class="header__toggle" id="header-toggle">
+               <i class="ri-menu-line"></i>
+            </button>
+         </div>
+      </header>
+
+      <!--=============== SIDEBAR ===============-->
+      <nav class="sidebar" id="sidebar">
+         <div class="sidebar__container">
+            <div class="sidebar__user">
+               <div class="sidebar__img">
+                  <img src="../assets/img/perfil.png" alt="image">
+               </div>
+   
+               <div class="sidebar__info">
+                  <h3>admin</h3>
+                  <span>admin@email.com</span>
+               </div>
+            </div>
+
+            <div class="sidebar__content">
+               <div>
+                  <h3 class="sidebar__title">MANAGE</h3>
+
+                  <div class="sidebar__list">
+                     <a href="admin.html" class="sidebar__link active-link">
+                        <i class="ri-pie-chart-2-fill"></i>
+                        <span>Dashboard</span>
+                     </a>
+                     
+                     <a href="qlnv.html" class="sidebar__link ">
+                        <i class="ri-wallet-3-fill"></i>
+                        <span>QLNV</span>
+                     </a>
+
+                     <a href="qlkh.html" class="sidebar__link">
+                        <i class="ri-calendar-fill"></i>
+                        <span>QLKH</span>
+                     </a>
+
+                     <a href="feedback.html" class="sidebar__link">
+                        <i class="ri-arrow-up-down-line"></i>
+                        <span>Feedback</span>
+                     </a>
+
+
+                     <a href="health.html" class="sidebar__link ">
+                      <i class="ri-bar-chart-box-fill"></i>
+                      <span>Health</span>
+                   </a>
+                  </div>
+               </div>
+
+               <div>
+                  <h3 class="sidebar__title">SETTINGS</h3>
+
+                  <div class="sidebar__list">
+                    <a href="edit.html" class="sidebar__link">
+                      <i class="ri-settings-3-fill"></i>
+                      <span>Settings</span>
+                   </a>
+
+                     
+                  </div>
+               </div>
+            </div>
+
+            <div class="sidebar__actions">
+
+               <button class="sidebar__link">
+                  <i class="ri-logout-box-r-fill"></i>
+                  <span>Log Out</span>
+               </button>
+            </div>
+         </div>
+      </nav>
+
+      <!--=============== MAIN ===============-->
+      <main class="main container" id="main">
+        <h1>Bảng Điều Khiển</h1>
+        <div class="row">
+          <!-- Giá trị chuyển hàng hôm nay -->
+          <div class="col-12 col-sm-6 col-md-4 col-xl-2">
+            <div class="card">
+              <div class="card-body">
+                <div class="d-flex justify-content-between">
+                  <div>
+                    <h5><b>Giá Trị Chuyển Hàng Hôm Nay</b></h5>
+                    <p class="text-muted">Tổng Giá Trị Vận Chuyển</p>
+                  </div>
+                  <h3 class="text-info fw-bold">$170</h3>
+                </div>
+                <div class="progress progress-sm">
+                  <div class="progress-bar bg-info w-75" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <div class="d-flex justify-content-between mt-2">
+                  <p class="text-muted mb-0">Thay Đổi</p>
+                  <p class="text-muted mb-0">75%</p>
+                </div>
+              </div>
+            </div>
+          </div>
+      
+          <!-- Doanh thu tổng cộng -->
+          <div class="col-12 col-sm-6 col-md-4 col-xl-2">
+            <div class="card">
+              <div class="card-body">
+                <div class="d-flex justify-content-between">
+                  <div>
+                    <h5><b>Doanh Thu Tổng Cộng</b></h5>
+                    <p class="text-muted">Doanh Thu Từ Các Lô Hàng</p>
+                  </div>
+                  <h3 class="text-success fw-bold">$120</h3>
+                </div>
+                <div class="progress progress-sm">
+                  <div class="progress-bar bg-success w-25" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <div class="d-flex justify-content-between mt-2">
+                  <p class="text-muted mb-0">Thay Đổi</p>
+                  <p class="text-muted mb-0">25%</p>
+                </div>
+              </div>
+            </div>
+          </div>
+      
+          <!-- Đơn hàng mới -->
+          <div class="col-12 col-sm-6 col-md-4 col-xl-2">
+            <div class="card">
+              <div class="card-body">
+                <div class="d-flex justify-content-between">
+                  <div>
+                    <h5><b>Đơn Hàng Mới</b></h5>
+                    <p class="text-muted">Đơn Hàng Chuyển Mới</p>
+                  </div>
+                  <h3 class="text-danger fw-bold">15</h3>
+                </div>
+                <div class="progress progress-sm">
+                  <div class="progress-bar bg-danger w-50" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <div class="d-flex justify-content-between mt-2">
+                  <p class="text-muted mb-0">Thay Đổi</p>
+                  <p class="text-muted mb-0">50%</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="row mt-4">
+          <!-- Khách hàng mới -->
+          <div class="col-12 col-sm-6 col-md-4 col-xl-2">
+            <div class="card">
+              <div class="card-body">
+                <div class="d-flex justify-content-between">
+                  <div>
+                    <h5><b>Khách Hàng Mới</b></h5>
+                    <p class="text-muted">Khách Hàng Mới Tham Gia</p>
+                  </div>
+                  <h3 class="text-secondary fw-bold">12</h3>
+                </div>
+                <div class="progress progress-sm">
+                  <div class="progress-bar bg-secondary w-25" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <div class="d-flex justify-content-between mt-2">
+                  <p class="text-muted mb-0">Thay Đổi</p>
+                  <p class="text-muted mb-0">25%</p>
+                </div>
+              </div>
+            </div>
+          </div>
+      
+          <!-- Dịch vụ bảo dưỡng cá koi -->
+          <div class="col-12 col-sm-6 col-md-4 col-xl-2">
+            <div class="card">
+              <div class="card-body">
+                <div class="d-flex justify-content-between">
+                  <div>
+                    <h5><b>Dịch Vụ Bảo Dưỡng Cá Koi</b></h5>
+                    <p class="text-muted">Số Lượng Cá Koi Được Bảo Dưỡng</p>
+                  </div>
+                  <h3 class="text-warning fw-bold">30</h3>
+                </div>
+                <div class="progress progress-sm">
+                  <div class="progress-bar bg-warning w-60" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <div class="d-flex justify-content-between mt-2">
+                  <p class="text-muted mb-0">Thay Đổi</p>
+                  <p class="text-muted mb-0">60%</p>
+                </div>
+              </div>
+            </div>
+          </div>
+      
+          <!-- Sức khỏe cá koi -->
+          <div class="col-12 col-sm-6 col-md-4 col-xl-2">
+            <div class="card">
+              <div class="card-body">
+                <div class="d-flex justify-content-between">
+                  <div>
+                    <h5><b>Sức Khỏe Cá Koi</b></h5>
+                    <p class="text-muted">Tình Trạng Sức Khỏe Các Cá Koi</p>
+                  </div>
+                  <h3 class="text-primary fw-bold">85%</h3>
+                </div>
+                <div class="progress progress-sm">
+                  <div class="progress-bar bg-primary w-85" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <div class="d-flex justify-content-between mt-2">
+                  <p class="text-muted mb-0">Khỏe Mạnh</p>
+                  <p class="text-muted mb-0">85%</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="row mt-4">
+          <!-- Chăm sóc hậu cần cá koi -->
+          <div class="col-12 col-sm-6 col-md-4 col-xl-2">
+            <div class="card">
+              <div class="card-body">
+                <div class="d-flex justify-content-between">
+                  <div>
+                    <h5><b>Chăm Sóc Hậu Cần Cá Koi</b></h5>
+                    <p class="text-muted">Số Lượng Cá Koi Được Vận Chuyển An Toàn</p>
+                  </div>
+                  <h3 class="text-success fw-bold">50</h3>
+                </div>
+                <div class="progress progress-sm">
+                  <div class="progress-bar bg-success w-90" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <div class="d-flex justify-content-between mt-2">
+                  <p class="text-muted mb-0">An Toàn</p>
+                  <p class="text-muted mb-0">90%</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      
+      
+      
+      <!--=============== MAIN JS ===============-->
+      <script src="../assets/js/main.js"></script>
+   </body>
+</html>

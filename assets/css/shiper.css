@@ -1,0 +1,78 @@
+#tracking-section {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tracking-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.tracking-table th, .tracking-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.tracking-table th {
+    background-color: #007bff;
+    color: white;
+}
+
+.tracking-table td {
+    background-color: #fff;
+}
+
+.tracking-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.btn-update {
+    padding: 6px 12px;
+    font-size: 14px;
+    color: white;
+    background-color: #28a745;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-update:hover {
+    background-color: #218838;
+}
+
+#status-12345, #status-12346, #status-12347, #status-12348, #status-12349 {
+    font-weight: bold;
+}
+
+#location-12345 {
+    color: #ff9800;
+}
+
+#location-12346 {
+    color: #2196f3;
+}
+
+#location-12347 {
+    color: #4caf50;
+}
+
+#location-12348 {
+    color: #f44336;
+}
+
+#location-12349 {
+    color: #ff5722;
+}
+
+.tracking-table td, .tracking-table th {
+    border-left: 1px solid #ddd;
+}
+
+.tracking-table td:first-child, .tracking-table th:first-child {
+    border-left: none;
+}

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+   <html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <!--=============== REMIXICONS ===============-->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+      <!--=============== CSS ===============-->
+      <link rel="stylesheet" href="../assets/css/barstyle.css">
+      <link rel="stylesheet" href="../assets/css/edit.css">
+
+      <title>Dashboard</title>
+   </head>
+   <body>
+      <!--=============== HEADER ===============-->
+      <header class="header" id="header">
+        <div class="header__container">
+           <a href="#" class="header__logo">
+              <i class="ri-cloud-fill"></i>
+              <span>Koi Fish</span>
+           </a>
+           <button class="header__toggle" id="header-toggle">
+              <i class="ri-menu-line"></i>
+           </button>
+        </div>
+     </header>
+     
+     <!--=============== SIDEBAR ===============-->
+     <nav class="sidebar" id="sidebar">
+        <div class="sidebar__container">
+           <div class="sidebar__user">
+              <div class="sidebar__img">
+                 <img src="../assets/img/perfil.png" alt="User Profile">
+              </div>
+              <div class="sidebar__info">
+                 <h3>Employee Name</h3>
+                 <span>employee@email.com</span>
+              </div>
+           </div>
+     
+           <div class="sidebar__content">
+              <div class="sidebar__list">
+                 <a href="staff.html" class="sidebar__link ">
+                    <i class="ri-user-3-fill"></i>
+                    <span>Quản Lý Khách Hàng</span>
+                 </a>
+     
+                 <a href="fish-health-management.html" class="sidebar__link">
+                    <i class="ri-heart-pulse-fill"></i>
+                    <span>Quản Lý Sức Khỏe Cá Nuôi</span>
+                 </a>
+     
+                 <a href="ship-manage.html" class="sidebar__link">
+                    <i class="ri-truck-fill"></i>
+                    <span>Quản Lý Vận Chuyển</span>
+                 </a>
+                 
+                 <a href="employee-profile.html" class="sidebar__link active-link">
+                    <i class="ri-settings-3-fill"></i>
+                    <span>Tài Khoản Nhân Viên</span>
+                 </a>
+               
+                 
+              </div>
+            </div>
+     
+           <div class="sidebar__actions">
+              <button class="sidebar__link">
+                 <i class="ri-logout-box-r-fill"></i>
+                 <span>Đăng Xuất</span>
+              </button>
+           </div>
+        </div>
+     </nav>
+     
+      <!--=============== MAIN ===============-->
+      <main class="main container" id="main">
+       
+         <div class="user-settings">
+            <h2>Update Your Information</h2>
+            <form id="settingsForm" class="settings-form">
+               <div class="form-group">
+                  <label for="username">Full Name:</label>
+                  <input type="text" id="username" name="username" class="form-control" value="employee" required>
+               </div>
+     
+               <div class="form-group">
+                  <label for="email">Email:</label>
+                  <input type="email" id="email" name="email" class="form-control" value="employee@email.com" required>
+               </div>
+     
+               <div class="form-group">
+                  <label for="password">Password:</label>
+                  <input type="password" id="password" name="password" class="form-control" required>
+               </div>
+     
+               <div class="form-group">
+                  <label for="confirm-password">Confirm Password:</label>
+                  <input type="password" id="confirm-password" name="confirm-password" class="form-control" required>
+               </div>
+     
+               <button id="savechanges" type="submit" class="btn btn-primary">Save Changes</button>
+            </form>
+     
+            <!-- Success message -->
+            <div id="successMessage" class="alert alert-success" style="display: none;">
+               Information updated successfully!
+            </div>
+         </div>
+      
+      
+      
+      <!--=============== MAIN JS ===============-->
+      <script src="../assets/js/main.js"></script>
+   </body>
+</html>

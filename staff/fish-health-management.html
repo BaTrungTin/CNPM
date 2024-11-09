@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+   <html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <!--=============== REMIXICONS ===============-->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
+
+      <!--=============== CSS ===============-->
+      <link rel="stylesheet" href="../assets/css/barstyle.css">
+      <link rel="stylesheet" href="../assets/css/HealthStaff.css">
+
+      <title>Fish Health</title>
+   </head>
+   <body>
+      <!--=============== HEADER ===============-->
+      <header class="header" id="header">
+         <div class="header__container">
+            <a href="#" class="header__logo">
+               <i class="ri-cloud-fill"></i>
+               <span>Koi Fish</span>
+            </a>
+            <button class="header__toggle" id="header-toggle">
+               <i class="ri-menu-line"></i>
+            </button>
+         </div>
+      </header>
+      
+      <!--=============== SIDEBAR ===============-->
+      <nav class="sidebar" id="sidebar">
+         <div class="sidebar__container">
+            <div class="sidebar__user">
+               <div class="sidebar__img">
+                  <img src="../assets/img/perfil.png" alt="User Profile">
+               </div>
+               <div class="sidebar__info">
+                  <h3>Employee Name</h3>
+                  <span>employee@email.com</span>
+               </div>
+            </div>
+      
+            <div class="sidebar__content">
+               <div class="sidebar__list">
+                  <a href="staff.html" class="sidebar__link ">
+                     <i class="ri-user-3-fill"></i>
+                     <span>Quản Lý Khách Hàng</span>
+                  </a>
+      
+                  <a href="fish-health-management.html" class="sidebar__link active-link">
+                     <i class="ri-heart-pulse-fill"></i>
+                     <span>Quản Lý Sức Khỏe Cá Nuôi</span>
+                  </a>
+      
+                  <a href="ship-manage.html" class="sidebar__link">
+                     <i class="ri-truck-fill"></i>
+                     <span>Quản Lý Vận Chuyển</span>
+                  </a>
+                 
+                  <a href="employee-profile.html" class="sidebar__link">
+                     <i class="ri-settings-3-fill"></i>
+                     <span>Tài Khoản Nhân Viên</span>
+                  </a>
+                
+                  
+               </div>
+             </div>
+      
+            <div class="sidebar__actions">
+               <button class="sidebar__link">
+                  <i class="ri-logout-box-r-fill"></i>
+                  <span>Đăng Xuất</span>
+               </button>
+            </div>
+         </div>
+      </nav>
+      <!--=============== MAIN ===============-->
+      <main class="main container" id="main">
+         <div class="fish-health-management">
+            <h2>Quản lý sức khỏe cá Koi</h2>
+            <button id="addFishBtn" onclick="openAddFishPopup()">Thêm cá</button>
+            
+            <!-- Bảng hiển thị sức khỏe cá -->
+            <div class="fish-health-table">
+               <table>
+                  <thead>
+                     <tr>
+                        <th>ID</th>
+                        <th>Tên cá</th>
+                        <th>Tình trạng sức khỏe</th>
+                        <th>Mô tả</th>
+                        <th>Hành động</th>
+                     </tr>
+                  </thead>
+                  <tbody id="fishHealthData">
+                     <!-- Dữ liệu sẽ được render ở đây -->
+                  </tbody>
+               </table>
+            </div>
+         
+            <!-- Pop-up Thêm/Sửa sức khỏe cá -->
+            <div id="fishHealthPopup" class="popup">
+               <div class="popup-content">
+                  <span class="close-btn" onclick="closeFishHealthPopup()">×</span>
+                  <h3>Thêm/Cập nhật sức khỏe cá</h3>
+                  <form onsubmit="addFishHealth(event)">
+                     <label for="fishName">Tên cá</label>
+                     <input type="text" id="fishName" name="fishName" required>
+                     
+                     <label for="healthStatus">Tình trạng sức khỏe</label>
+                     <select id="healthStatus" name="healthStatus" required>
+                        <option value="Good">Tốt</option>
+                        <option value="Average">Trung bình</option>
+                        <option value="Poor">Kém</option>
+                     </select>
+                     
+                     <label for="healthDescription">Mô tả</label>
+                     <textarea id="healthDescription" name="healthDescription" rows="4" required></textarea>
+         
+                     <label for="fishAge">Tuổi cá</label>
+                     <input type="number" id="fishAge" name="fishAge" required>
+         
+                     <label for="lastCheckup">Ngày kiểm tra cuối</label>
+                     <input type="date" id="lastCheckup" name="lastCheckup" required>
+         
+                     <button type="submit">Lưu</button>
+                  </form>
+               </div>
+            </div>
+         </div>
+         
+         
+</main> 
+     
+    
+      
+      <!--=============== MAIN JS ===============-->
+      <script src="../assets/js/main.js"></script>
+      <script>
+        // Mảng lưu trữ dữ liệu sức khỏe cá
+let fishHealthData = [];
+
+// Mở pop-up thêm cá
+function openAddFishPopup() {
+   document.getElementById("fishHealthPopup").style.display = "flex";
+}
+
+// Đóng pop-up
+function closeFishHealthPopup() {
+   document.getElementById("fishHealthPopup").style.display = "none";
+}
+
+// Hàm thêm hoặc cập nhật thông tin sức khỏe cá
+function addFishHealth(event) {
+   event.preventDefault();
+
+   const fishName = document.getElementById("fishName").value;
+   const healthStatus = document.getElementById("healthStatus").value;
+   const healthDescription = document.getElementById("healthDescription").value;
+   const fishAge = document.getElementById("fishAge").value;
+   const lastCheckup = document.getElementById("lastCheckup").value;
+
+   // Tạo đối tượng sức khỏe cá
+   const fishHealth = {
+      id: fishHealthData.length + 1,
+      fishName: fishName,
+      healthStatus: healthStatus,
+      healthDescription: healthDescription,
+      fishAge: fishAge,
+      lastCheckup: lastCheckup
+   };
+
+   // Thêm vào mảng dữ liệu
+   fishHealthData.push(fishHealth);
+
+   // Hiển thị lại bảng dữ liệu
+   renderFishHealthTable();
+
+   // Đóng pop-up sau khi thêm dữ liệu
+   closeFishHealthPopup();
+}
+
+// Hiển thị bảng sức khỏe cá
+function renderFishHealthTable() {
+   const tableBody = document.getElementById("fishHealthData");
+   tableBody.innerHTML = ''; // Xóa dữ liệu cũ
+
+   fishHealthData.forEach(fish => {
+      const row = document.createElement("tr");
+
+      row.innerHTML = `
+         <td>${fish.id}</td>
+         <td>${fish.fishName}</td>
+         <td>${fish.healthStatus}</td>
+         <td>${fish.healthDescription}</td>
+         <td class="action-buttons">
+            <button class="edit-btn" onclick="editFishHealth(${fish.id})">Chỉnh sửa</button>
+            <button class="delete-btn" onclick="deleteFishHealth(${fish.id})">Xóa</button>
+         </td>
+      `;
+
+      tableBody.appendChild(row);
+   });
+}
+
+// Chỉnh sửa thông tin sức khỏe cá
+function editFishHealth(id) {
+   const fish = fishHealthData.find(f => f.id === id);
+
+   if (fish) {
+      document.getElementById("fishName").value = fish.fishName;
+      document.getElementById("healthStatus").value = fish.healthStatus;
+      document.getElementById("healthDescription").value = fish.healthDescription;
+      document.getElementById("fishAge").value = fish.fishAge;
+      document.getElementById("lastCheckup").value = fish.lastCheckup;
+
+      // Mở pop-up để chỉnh sửa
+      openAddFishPopup();
+
+      // Xóa cá cũ khỏi mảng và cập nhật lại ID sau khi chỉnh sửa
+      fishHealthData = fishHealthData.filter(f => f.id !== id);
+   }
+}
+
+// Xóa thông tin sức khỏe cá
+function deleteFishHealth(id) {
+   if (confirm("Bạn có chắc chắn muốn xóa thông tin này?")) {
+      fishHealthData = fishHealthData.filter(f => f.id !== id);
+      renderFishHealthTable(); // Cập nhật lại bảng
+   }
+}
+
+// Khởi động ban đầu
+renderFishHealthTable();
+
+     </script>
+   </body>
+</html>

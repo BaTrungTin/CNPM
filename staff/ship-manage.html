@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+   <html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <!--=============== REMIXICONS ===============-->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
+
+      <!--=============== CSS ===============-->
+      <link rel="stylesheet" href="../assets/css/barstyle.css">
+      <link rel="stylesheet" href="../assets/css/ship-manage.css">
+
+      <title>Fish Health</title>
+   </head>
+   <body>
+      <!--=============== HEADER ===============-->
+      <header class="header" id="header">
+         <div class="header__container">
+            <a href="#" class="header__logo">
+               <i class="ri-cloud-fill"></i>
+               <span>Koi Fish</span>
+            </a>
+            <button class="header__toggle" id="header-toggle">
+               <i class="ri-menu-line"></i>
+            </button>
+         </div>
+      </header>
+      
+      <!--=============== SIDEBAR ===============-->
+      <nav class="sidebar" id="sidebar">
+         <div class="sidebar__container">
+            <div class="sidebar__user">
+               <div class="sidebar__img">
+                  <img src="../assets/img/perfil.png" alt="User Profile">
+               </div>
+               <div class="sidebar__info">
+                  <h3>Employee Name</h3>
+                  <span>employee@email.com</span>
+               </div>
+            </div>
+      
+            <div class="sidebar__content">
+               <div class="sidebar__list">
+                  <a href="staff.html" class="sidebar__link ">
+                     <i class="ri-user-3-fill"></i>
+                     <span>Quản Lý Khách Hàng</span>
+                  </a>
+      
+                  <a href="fish-health-management.html" class="sidebar__link ">
+                     <i class="ri-heart-pulse-fill"></i>
+                     <span>Quản Lý Sức Khỏe Cá Nuôi</span>
+                  </a>
+      
+                  <a href="ship-manage.html" class="sidebar__link active-link">
+                     <i class="ri-truck-fill"></i>
+                     <span>Quản Lý Vận Chuyển</span>
+                  </a>
+                 
+                  <a href="employee-profile.html" class="sidebar__link">
+                     <i class="ri-settings-3-fill"></i>
+                     <span>Tài Khoản Nhân Viên</span>
+                  </a>
+                
+                 
+               </div>
+             </div>
+      
+            <div class="sidebar__actions">
+               <button class="sidebar__link">
+                  <i class="ri-logout-box-r-fill"></i>
+                  <span>Đăng Xuất</span>
+               </button>
+            </div>
+         </div>
+      </nav>
+      <!--=============== MAIN ===============-->
+      <main class="main container" id="main">
+        <h1>Theo dõi đơn hàng</h1>
+        <section id="tracking-section">
+           <table class="tracking-table">
+              <thead>
+                 <tr>
+                    <th>ID Đơn Hàng</th>
+                    <th>Tên Hàng</th>
+                    <th>Ngày Đặt</th>
+                    <th>Trạng Thái</th>
+                    <th>Đã Tới Đâu</th>
+                    <th>Sức Khỏe Cá</th>
+                    <th>Hành Động</th>
+                 </tr>
+              </thead>
+              <tbody id="tracking-table-body">
+                 <tr id="order-12345">
+                    <td>12345</td>
+                    <td>Cá Koi - Vàng Cao Cấp</td>
+                    <td>2024-11-01</td>
+                    <td id="status-12345">Đang vận chuyển</td>
+                    <td id="location-12345">Đang vận chuyển từ Nhật Bản sang Việt Nam</td>
+                    <td>Khỏe mạnh</td>
+                    <td><button class="btn-update" onclick="main('12345')">Cập Nhật</button></td>
+                 </tr>
+                 <tr id="order-12345">
+                    <td>12</td>
+                    <td>Cá Koi - Vàng Cao Cấp</td>
+                    <td>2024-11-01</td>
+                    <td id="status-12345">Đang vận chuyển</td>
+                    <td id="location-12345">Đang vận chuyển từ Nhật Bản sang Việt Nam</td>
+                    <td>Khỏe mạnh</td>
+                    <td><button class="btn-update" onclick="main('12345')">Cập Nhật</button></td>
+                 </tr>
+                 <!-- Các đơn hàng khác -->
+              </tbody>
+           </table>
+        </section>
+  
+        <!-- Popup Cập Nhật Đơn Hàng -->
+        <div id="update-popup" class="popup">
+           <div class="popup-content">
+              <span class="popup-close" onclick="closeUpdatePopup()">&times;</span>
+              <h2>Cập Nhật Đơn Hàng</h2>
+              <form id="update-form">
+                 <label for="order-status">Trạng Thái:</label>
+                 <select id="order-status" name="status">
+                    <option value="Đang vận chuyển">Đang vận chuyển</option>
+                    <option value="Đến cảng Việt Nam">Đến cảng Việt Nam</option>
+                    <option value="Đang giao hàng">Đang giao hàng</option>
+                    <option value="Thông quan">Thông quan</option>
+                    <option value="Đã giao">Đã giao</option>
+                 </select>
+  
+                 <label for="order-location">Đã Tới Đâu:</label>
+                 <select id="order-location" name="location">
+                    <option value="Nhật Bản">Nhật Bản</option>
+                    <option value="Việt Nam">Việt Nam</option>
+                    <option value="Cảng Việt Nam">Cảng Việt Nam</option>
+                    <option value="Đang giao tại Việt Nam">Đang giao tại Việt Nam</option>
+                 </select>
+  
+                 <label for="fish-health">Sức Khỏe Cá:</label>
+                 <select id="fish-health" name="health">
+                    <option value="Khỏe mạnh">Khỏe mạnh</option>
+                    <option value="Bị bệnh">Bị bệnh</option>
+                    <option value="Cần chăm sóc đặc biệt">Cần chăm sóc đặc biệt</option>
+                 </select>
+  
+                 <button type="submit" class="btn-submit">Cập Nhật</button>
+              </form>
+           </div>
+        </div>
+         
+</main> 
+     
+    
+      
+      <!--=============== MAIN JS ===============-->
+      <script src="../assets/js/main.js"></script>
+   </body>
+</html>

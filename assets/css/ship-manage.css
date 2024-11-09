@@ -1,0 +1,227 @@
+
+
+.tracking-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.tracking-table th, .tracking-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.tracking-table th {
+    background-color: #1a73e8;
+    color: white;
+}
+
+.tracking-table td {
+    background-color: #f9f9f9;
+}
+
+.tracking-table tr:hover td {
+    background-color: #e0f7fa;
+}
+
+.btn-update {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-update:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+.btn-update:active {
+    background-color: #388e3c;
+    transform: scale(1);
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.popup-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 5px;
+    width: 300px;
+}
+
+.popup-close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.popup-close:hover,
+.popup-close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+form select, form button {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    background-color: #1a73e8;
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #1577e2;
+}
+
+/* Responsive CSS */
+@media (max-width: 768px) {
+    .tracking-table {
+        font-size: 12px;
+    }
+
+    .tracking-table th, .tracking-table td {
+        padding: 8px;
+    }
+
+    .btn-update {
+        font-size: 12px;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 576px) {
+    .tracking-table th, .tracking-table td {
+        font-size: 10px;
+        padding: 5px;
+    }
+
+    .btn-update {
+        font-size: 10px;
+        padding: 6px 12px;
+    }
+}
+/* Hiệu ứng mờ nền khi mở popup */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Làm mờ nền */
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s ease-in-out; /* Hiệu ứng mờ mở popup */
+ }
+ 
+ @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+ }
+ 
+ /* Thiết kế nội dung của popup */
+ .popup-content {
+    position: relative;
+    background: #fff;
+    padding: 30px 20px;
+    border-radius: 12px;
+    max-width: 450px;
+    width: 90%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Đổ bóng */
+    transform: scale(0.95); /* Hiệu ứng co dãn */
+    animation: popupScale 0.3s ease-in-out forwards;
+ }
+ 
+ @keyframes popupScale {
+    from { transform: scale(0.9); }
+    to { transform: scale(1); }
+ }
+ 
+ /* Close button */
+ .popup .popup-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #555;
+ }
+ 
+ .popup .popup-close:hover {
+    color: #000;
+ }
+ 
+ /* Tiêu đề của popup */
+ .popup-content h2 {
+    text-align: center;
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+ }
+ 
+ /* Form inputs */
+ .popup-content input, .popup-content select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border 0.3s ease;
+ }
+ 
+ .popup-content input:focus, .popup-content select:focus {
+    border-color: #4CAF50;
+ }
+ 
+ /* Nút submit trong popup */
+ .popup-content button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+ }
+ 
+ .popup-content button:hover {
+    background-color: #45a049;
+ }
+ 

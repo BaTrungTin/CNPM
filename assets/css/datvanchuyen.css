@@ -1,0 +1,149 @@
+/* To make the form more visually appealing */
+body {
+	font-family: "Verdana", cursive;
+	font-size: 16px;
+	color: #ffffff;
+	text-rendering: optimizeLegibility;
+	font-weight: initial;
+}
+
+.order-form {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    padding: 20px;
+}
+
+.order-form .container {
+    max-width: 100%;
+    padding: 0 15px;
+}
+
+h1 {
+    font-size: 28px;
+    color: #1a73e8;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+p {
+    color: #666;
+    text-align: center;
+}
+
+.form-group label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-control {
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.form-control:focus {
+    border-color: #1a73e8;
+    outline: none;
+    background-color: #e9f0fb;  /* Subtle background change */
+    box-shadow: 0 0 5px rgba(26, 115, 232, 0.5);  /* Adding a subtle shadow */
+}
+
+
+
+.form-check-label {
+    font-size: 14px;
+    color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .form-group .row {
+        flex-direction: column;
+    }
+
+    .form-group .col-sm-6 {
+        margin-bottom: 10px;
+    }
+
+    .order-form {
+        padding: 15px; /* Reduced padding for better mobile view */
+    }
+}
+
+#successMessage {
+    background-color: #d4edda;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+#successMessage h2 {
+    color: #155724;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#successMessage p {
+    color: #3c763d;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+#successMessage button {
+    background-color: #28a745;
+    color: white;
+    padding: 12px 30px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#successMessage button:hover {
+    background-color: #218838;
+}
+
+/* Close button for success message */
+#successMessage .close-btn {
+    background-color: transparent;
+    color: #3c763d;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+#successMessage .close-btn:hover {
+    color: #155724;
+}
+  
+    #createPacketFormFields > div.form-group.text-center.mt-4 > button{
+        background-color: #1a73e8;
+        color: white;
+        padding: 12px 30px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        width: 50%;
+        margin-top: 20px;
+    }
+    #createPacketFormFields > div.form-group.text-center.mt-4 > button:hover{
+        background-color: #0056b3;
+
+    }

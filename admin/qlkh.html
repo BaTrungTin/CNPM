@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+   <html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <!--=============== REMIXICONS ===============-->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
+
+      <!--=============== CSS ===============-->
+      <link rel="stylesheet" href="../assets/css/barstyle.css">
+      <link rel="stylesheet" href="../assets/css/home.css">
+      <link rel="stylesheet" href="../assets/css/qlkh.css">
+
+      <title>Quản lý khách hàng</title>
+    <!--=============bootstrap================-->
+ 
+    </head>
+   <body>
+      <!--=============== HEADER ===============-->
+      <header class="header" id="header">
+         <div class="header__container">
+            <a href="#" class="header__logo">
+               <i class="ri-cloud-fill"></i>
+               <span>Koi Fish</span>
+            </a>
+            
+            <button class="header__toggle" id="header-toggle">
+               <i class="ri-menu-line"></i>
+            </button>
+         </div>
+      </header>
+
+      <!--=============== SIDEBAR ===============-->
+      <nav class="sidebar" id="sidebar">
+         <div class="sidebar__container">
+            <div class="sidebar__user">
+               <div class="sidebar__img">
+                  <img src="../assets/img/perfil.png" alt="image">
+               </div>
+   
+               <div class="sidebar__info">
+                  <h3>admin</h3>
+                  <span>admin@email.com</span>
+               </div>
+            </div>
+
+            <div class="sidebar__content">
+               <div>
+                  <h3 class="sidebar__title">MANAGE</h3>
+
+                  <div class="sidebar__list">
+                     <a href="admin.html" class="sidebar__link">
+                        <i class="ri-pie-chart-2-fill"></i>
+                        <span>Dashboard</span>
+                     </a>
+                     
+                     <a href="qlnv.html" class="sidebar__link ">
+                        <i class="ri-wallet-3-fill"></i>
+                        <span>QLNV</span>
+                     </a>
+
+                     <a href="qlkh.html" class="sidebar__link active-link">
+                        <i class="ri-calendar-fill"></i>
+                        <span>QLKH</span>
+                     </a>
+
+                     <a href="feedback.html" class="sidebar__link">
+                        <i class="ri-arrow-up-down-line"></i>
+                        <span> Feedback</span>
+                     </a>
+
+
+                     <a href="health.html" class="sidebar__link ">
+                        <i class="ri-bar-chart-box-fill"></i>
+                        <span>Health</span>
+                     </a>
+                  </div>
+               </div>
+
+               <div>
+                  <h3 class="sidebar__title">SETTINGS</h3>
+
+                  <div class="sidebar__list">
+                    <a href="edit.html" class="sidebar__link">
+                        <i class="ri-settings-3-fill"></i>
+                        <span>Settings</span>
+                     </a>
+
+                     
+                  </div>
+               </div>
+            </div>
+
+            <div class="sidebar__actions">
+
+               <button class="sidebar__link">
+                  <i class="ri-logout-box-r-fill"></i>
+                  <span>Log Out</span>
+               </button>
+            </div>
+         </div>
+      </nav>
+
+      <!--=============== MAIN ===============-->
+     
+      <main class="main container" id="main">
+        <div class="customer-management">
+            <h2>Quản lý Khách hàng - Dịch vụ Vận chuyển Cá Koi</h2>
+     
+            <!-- Nút mở form thêm khách hàng -->
+            <button id="addCustomerBtn" onclick="openAddCustomerPopup()">Thêm Khách Hàng</button>
+     
+            <!-- Pop-up thêm khách hàng -->
+            <div id="addCustomerPopup" class="popup">
+                <div class="popup-content">
+                    <span class="close-btn" onclick="closeAddCustomerPopup()">&times;</span>
+                    <h3>Thêm Khách Hàng</h3>
+                    <form id="customerForm" onsubmit="addCustomer(event)">
+                        <input type="text" id="name" placeholder="Tên khách hàng" required />
+                        <input type="text" id="phone" placeholder="Số điện thoại" required />
+                        <input type="email" id="email" placeholder="Email" required />
+                        <input type="text" id="address" placeholder="Địa chỉ" required />
+                        <button type="submit">Thêm khách hàng</button>
+                    </form>
+                </div>
+            </div>
+     
+            <!-- Bảng dữ liệu khách hàng -->
+            <div class="customer-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Tên</th>
+                            <th>Số điện thoại</th>
+                            <th>Email</th>
+                            <th>Địa chỉ</th>
+                            <th>Hành động</th>
+                        </tr>
+                    </thead>
+                    <tbody id="customerData">
+                        <!-- Dữ liệu khách hàng sẽ được thêm vào đây -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+     
+        <!-- Pop-up sửa khách hàng -->
+        <div id="customerPopup" class="popup">
+            <div class="popup-content">
+                <span class="close-btn" onclick="closeCustomerPopup()">&times;</span>
+                <h3 id="popupTitle">Sửa Khách Hàng</h3>
+                <form id="editCustomerForm" onsubmit="updateCustomer(event)">
+                    <input type="text" id="editName" placeholder="Tên khách hàng" required />
+                    <input type="text" id="editPhone" placeholder="Số điện thoại" required />
+                    <input type="email" id="editEmail" placeholder="Email" required />
+                    <input type="text" id="editAddress" placeholder="Địa chỉ" required />
+                    <button type="submit">Lưu</button>
+                </form>
+            </div>
+        </div>
+     </main>
+     
+     <!--=============== MAIN JS ===============-->
+     <script src="../assets/js/main.js"></script>
+     <script>
+         let customers = [];
+         let editIndex = null;
+     
+         function openAddCustomerPopup() {
+             document.getElementById("addCustomerPopup").style.display = "flex";
+         }
+     
+         function closeAddCustomerPopup() {
+             document.getElementById("addCustomerPopup").style.display = "none";
+         }
+     
+         function openCustomerPopup() {
+             document.getElementById("customerPopup").style.display = "flex";
+         }
+     
+         function closeCustomerPopup() {
+             document.getElementById("customerPopup").style.display = "none";
+         }
+     
+         function addCustomer(event) {
+             event.preventDefault();
+             const customer = {
+                 id: customers.length + 1,
+                 name: document.getElementById("name").value,
+                 phone: document.getElementById("phone").value,
+                 email: document.getElementById("email").value,
+                 address: document.getElementById("address").value
+             };
+             customers.push(customer);
+             renderTable();
+             closeAddCustomerPopup();
+         }
+     
+         function renderTable() {
+             const customerData = document.getElementById("customerData");
+             customerData.innerHTML = customers.map((customer, index) => `
+                 <tr>
+                     <td>${customer.id}</td>
+                     <td>${customer.name}</td>
+                     <td>${customer.phone}</td>
+                     <td>${customer.email}</td>
+                     <td>${customer.address}</td>
+                     <td class="action-buttons">
+                         <button onclick="editCustomer(${index})">Sửa</button>
+                         <button class="delete-btn" onclick="deleteCustomer(${index})">Xóa</button>
+                     </td>
+                 </tr>
+             `).join("");
+         }
+     
+         function editCustomer(index) {
+             editIndex = index;
+             const customer = customers[index];
+             document.getElementById("editName").value = customer.name;
+             document.getElementById("editPhone").value = customer.phone;
+             document.getElementById("editEmail").value = customer.email;
+             document.getElementById("editAddress").value = customer.address;
+             openCustomerPopup();
+         }
+     
+         function updateCustomer(event) {
+             event.preventDefault();
+             customers[editIndex] = {
+                 id: customers[editIndex].id,
+                 name: document.getElementById("editName").value,
+                 phone: document.getElementById("editPhone").value,
+                 email: document.getElementById("editEmail").value,
+                 address: document.getElementById("editAddress").value
+             };
+             renderTable();
+             closeCustomerPopup();
+         }
+     
+         function deleteCustomer(index) {
+             customers.splice(index, 1);
+             renderTable();
+         }
+     </script>
+     
+   </body>
+</html>

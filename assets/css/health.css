@@ -1,0 +1,70 @@
+/* Toàn bộ bảng */
+.fish-health {
+    margin: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Tiêu đề bảng */
+.fish-health h2 {
+    text-align: center;
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Bảng và các cột */
+.health-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #f9f9f9;
+}
+
+/* Cột tiêu đề */
+.health-table th {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 15px;
+    text-align: left;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* Cột dữ liệu */
+.health-table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+    font-size: 14px;
+}
+
+/* Hiệu ứng hover cho hàng */
+.health-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Cột "Mô Tả Tình Trạng" có chiều rộng phù hợp */
+.health-table td:nth-child(5) {
+    width: 40%; /* Điều chỉnh độ rộng cột mô tả */
+}
+
+/* Định dạng cho hàng đầu tiên (khi không có dữ liệu) */
+.health-table td.empty-row {
+    text-align: center;
+    color: #999;
+}
+
+/* Viền bảng */
+.health-table th, .health-table td {
+    border-bottom: 1px solid #ddd;
+}
+
+/* Tạo viền sáng cho bảng khi di chuột vào */
+.health-table td, .health-table th {
+    transition: all 0.3s ease;
+}
+
+/* Tăng cường độ bóng viền khi di chuột vào bảng */
+.health-table td:hover, .health-table th:hover {
+    background-color: #e0f7fa;
+    border-color: #4CAF50;
+}

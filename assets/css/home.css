@@ -1,0 +1,132 @@
+/* Container and Card Styles */
+.card {
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    box-shadow: 10px 10px 20px #d1d1d1, -10px -10px 20px #ffffff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+  }
+  
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 15px 15px 30px #d1d1d1, -15px -15px 30px #ffffff;
+  }
+  
+  /* Card Body and Typography */
+  .card-body {
+    padding: 20px;
+    text-align: left;
+  }
+  
+  .card h5 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 0.2rem;
+  }
+  
+  .card p {
+    font-size: 0.875rem;
+    color: #777;
+  }
+  
+  .card h3 {
+    font-size: 2rem;
+    margin: 0;
+  }
+  
+  /* Progress Bar Styling */
+  .progress {
+    height: 8px;
+    border-radius: 5px;
+    overflow: hidden;
+    background: #f1f1f1;
+  }
+  
+  .progress-bar {
+    border-radius: 5px;
+    transition: width 0.4s ease;
+  }
+  
+  /* Color Customizations */
+  .text-info {
+    color: #17a2b8 !important;
+  }
+  
+  .text-success {
+    color: #28a745 !important;
+  }
+  
+  .text-danger {
+    color: #dc3545 !important;
+  }
+  
+  .text-secondary {
+    color: #6c757d !important;
+  }
+  
+  /* Căn các thẻ card thành một hàng ngang */
+.main .row {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto; /* Thêm thanh cuộn ngang nếu cần */
+    gap: 15px; /* Khoảng cách giữa các card */
+  }
+  
+  /* Đảm bảo mỗi thẻ có chiều rộng đồng đều */
+  .main .col-12 {
+    flex: 1 0 auto; /* Đặt chiều rộng tự động nhưng duy trì một hàng */
+  }
+  
+  /* Tùy chỉnh cho các kích thước màn hình nhỏ */
+  @media (max-width: 768px) {
+    .main .row {
+      flex-wrap: wrap; /* Cho phép các card tự động xuống dòng trên màn hình nhỏ */
+    }
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 992px) {
+    .card h5 {
+      font-size: 1.2rem;
+    }
+  
+    .card h3 {
+      font-size: 1.8rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .card h5 {
+      font-size: 1.1rem;
+    }
+  
+    .card h3 {
+      font-size: 1.6rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .card {
+      margin-bottom: 20px;
+    }
+  
+    .card h5 {
+      font-size: 1rem;
+    }
+  
+    .card h3 {
+      font-size: 1.4rem;
+    }
+  }
+  
+  /* Spacing and Layout Enhancements */
+  .d-flex.justify-content-between {
+    gap: 15px;
+  }
+  
+  .mt-2 {
+    margin-top: 0.8rem !important;
+  }
+  

@@ -1,0 +1,94 @@
+/* General Styles for the Main Container */
+.main.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+.user-settings {
+    text-align: center;
+}
+
+.user-settings h2 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* Form Styles */
+.settings-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.settings-form .form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.settings-form .form-group label {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #555;
+    display: block;
+}
+
+.settings-form .form-group input {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #fff;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+.settings-form .form-group input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Button Styles */
+.settings-form .btn {
+    display: inline-block;
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.settings-form .btn:hover {
+    background-color: #0056b3;
+}
+
+/* Success Message Styles */
+.alert-success {
+    background-color: #28a745;
+    color: #fff;
+    padding: 15px;
+    border-radius: 6px;
+    margin-top: 20px;
+    font-weight: 500;
+    display: none;
+}
+body {
+	font-family: "Verdana", cursive;
+	font-size: 16px;
+	color: #ffffff;
+	text-rendering: optimizeLegibility;
+	font-weight: initial;
+}
