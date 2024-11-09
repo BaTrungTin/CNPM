@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+   <html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <!--=============== REMIXICONS ===============-->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+      <!--=============== CSS ===============-->
+      <link rel="stylesheet" href="../assets/css/barstyle.css">
+      <link rel="stylesheet" href="../assets/css/Guest-Home.css">
+
+      <title>Dashboard</title>
+   </head>
+   <body>
+      <!--=============== HEADER ===============-->
+      <header class="header" id="header">
+         <div class="header__container">
+            <a href="#" class="header__logo">
+               <i class="ri-cloud-fill"></i>
+               <span>Koi fish</span>
+            </a>
+            
+            <button class="header__toggle" id="header-toggle">
+               <i class="ri-menu-line"></i>
+            </button>
+         </div>
+      </header>
+
+      <!--=============== SIDEBAR ===============-->
+      <nav class="sidebar" id="sidebar">
+        <div class="sidebar__container">
+           <div class="sidebar__user">
+              <div class="sidebar__img">
+                 <img src="../assets/img/perfil.png" alt="User Profile">
+              </div>
+  
+              <div class="sidebar__info">
+                 <h3>User Name</h3>
+                 <span>user@email.com</span>
+              </div>
+           </div>
+  
+           <div class="sidebar__content">
+              <div>
+                 <!-- SERVICES SECTION -->
+                 <h3 class="sidebar__title " style="color: black;">SERVICES</h3>
+                 <div class="sidebar__list">
+                    <a href="#" class="sidebar__link active-link">
+                       <i class="ri-home-3-line"></i>
+                       <span>Home</span>
+                    </a>
+  
+                  
+  
+                    <a href="tracking.html" class="sidebar__link">
+                       <i class="ri-truck-fill"></i>
+                       <span>Theo Dõi Đơn Hàng</span>
+                    </a>
+  
+                    <a href="voucher.html" class="sidebar__link">
+                       <i class="ri-price-tag-fill"></i>
+                       <span>Khuyến Mại</span>
+                    </a>
+  
+                    <a href="GuestEdit.html" class="sidebar__link">
+                       <i class="ri-user-3-fill"></i>
+                       <span>Tài Khoản</span>
+                    </a>
+                 </div>
+                 <br/>
+                 <!-- EXPRESS SECTION -->
+                 <h3 class="sidebar__title" style="color: black;">EXPRESS</h3>
+                 <div class="sidebar__list">
+                  
+                    <a href="datvanchuyen.html" class="sidebar__link">
+                        <i class="ri-file-list-3-fill"></i>
+                        <span>Đặt Vận Chuyển</span>
+                     </a>
+  
+                    <a href="history.html" class="sidebar__link">
+                        <i class="ri-file-list-2-fill"></i>
+                        <span>lịch sử đặt hàng</span>
+                     </a>
+                 </div>
+              </div>
+           </div>
+  
+           <div class="sidebar__actions">
+              <button class="sidebar__link">
+                 <i class="ri-logout-box-r-fill"></i>
+                 <span>Đăng Xuất</span>
+              </button>
+           </div>
+        </div>
+     </nav>
+  
+
+      <!--=============== MAIN ===============-->
+      <main class="main container" id="main">       
+        <div class="container py-4">
+            <h1 class="h1 text-center" id="pageHeaderTitle"">Chào Mừng Đến Với Dịch Vụ Vận Chuyển Cá Koi</h1>
+        
+            <article class="postcard dark blue">
+                <a class="postcard__img_link" href="#">
+                    <img class="postcard__img" src="https://picsum.photos/200/100" alt="Cá Koi" />
+                </a>
+                <div class="postcard__text">
+                    <h1 class="postcard__title blue"><a href="#">Bạn Chưa Có Đơn Hàng</a></h1>
+                    <div class="postcard__subtitle small">
+                        <time datetime="2024-11-08 12:00:00">
+                            <i class="fas fa-calendar-alt mr-2"></i>Ngày Đặt Đơn Mới
+                        </time>
+                    </div>
+                    <div class="postcard__bar"></div>
+                    <div class="postcard__preview-txt">Bạn chưa có đơn hàng nào. Vui lòng thêm đơn mới vào ngày hôm nay để tiến hành vận chuyển cá koi của bạn từ Nhật Bản về Việt Nam.</div>
+                    <ul class="postcard__tagbox">
+                        <li class="tag__item">
+                            <button class="btn btn-primary btn-lg">
+                                <i class="fas fa-truck mr-2"></i>Vận Chuyển
+                            </button>
+                        </li>
+                        <li class="tag__item">
+                            <button class="btn btn-success btn-lg">
+                                <i class="fas fa-play mr-2"></i>Đặt Vận Chuyển
+                            </button>
+                        </li>
+                    </ul>
+                    
+                    
+                </div>
+            </article>
+            
+            <article class="postcard dark red">
+                <a class="postcard__img_link" href="#">
+                    <img class="postcard__img" src="https://picsum.photos/200/100" alt="Khuyến Mại" />    
+                </a>
+                <div class="postcard__text">
+                    <h1 class="postcard__title red"><a href="#">Khuyến Mại Hiện Tại</a></h1>
+                    <div class="postcard__subtitle small">
+                        <time datetime="2024-11-08 12:00:00">
+                            <i class="fas fa-calendar-alt mr-2"></i>Ngày Hết Hạn: 30/11/2024
+                        </time>
+                    </div>
+                    <div class="postcard__bar"></div>
+                    <div class="postcard__preview-txt">Giảm giá 10% cho các đơn hàng tiếp theo. Hãy đặt vận chuyển ngay để nhận ưu đãi hấp dẫn!</div>
+                    <ul class="postcard__tagbox">
+                        <li class="tag__item"><i class="fas fa-tag mr-2"></i>Khuyến Mại</li>
+                        <li class="tag__item"><i class="fas fa-clock mr-2"></i>Hạn Cuối</li>
+                        <li class="tag__item play red">
+                            <a href="#"><i class="fas fa-play mr-2"></i>Xem Chi Tiết</a>
+                        </li>
+                    </ul>
+                </div>
+            </article>
+    
+            <article class="postcard dark green">
+                <a class="postcard__img_link" href="#">
+                    <img class="postcard__img" src="https://picsum.photos/200/100" alt="Chăm Sóc Cá Koi" />
+                </a>
+                <div class="postcard__text">
+                    <h1 class="postcard__title green"><a href="#">Chăm Sóc Cá Koi</a></h1>
+                    <div class="postcard__subtitle small">
+                        <time datetime="2024-11-08 12:00:00">
+                            <i class="fas fa-calendar-alt mr-2"></i>Quá Trình Vận Chuyển
+                        </time>
+                    </div>
+                    <div class="postcard__bar"></div>
+                    <div class="postcard__preview-txt">Làm thế nào để chăm sóc cá koi trong suốt quá trình vận chuyển? Hãy tham khảo các mẹo chăm sóc cá koi khỏe mạnh của chúng tôi!</div>
+                    <ul class="postcard__tagbox">
+                        <li class="tag__item"><i class="fas fa-tag mr-2"></i>Chăm Sóc</li>
+                        <li class="tag__item"><i class="fas fa-clock mr-2"></i>Đặt Câu Hỏi</li>
+                        <li class="tag__item play green">
+                            <a href="#"><i class="fas fa-play mr-2"></i>Tìm Hiểu Thêm</a>
+                        </li>
+                    </ul>
+                </div>
+            </article>
+    
+            <article class="postcard dark yellow">
+                <a class="postcard__img_link" href="#">
+                    <img class="postcard__img" src="https://picsum.photos/200/100" alt="Hướng Dẫn Đặt Vận Chuyển" />
+                </a>
+                <div class="postcard__text">
+                    <h1 class="postcard__title yellow"><a href="#">Hướng Dẫn Đặt Vận Chuyển</a></h1>
+                    <div class="postcard__subtitle small">
+                        <time datetime="2024-11-08 12:00:00">
+                            <i class="fas fa-calendar-alt mr-2"></i>Bắt Đầu Ngay
+                        </time>
+                    </div>
+                    <div class="postcard__bar"></div>
+                    <div class="postcard__preview-txt">Cần hỗ trợ trong việc đặt vận chuyển cá koi? Xem hướng dẫn chi tiết về cách tạo đơn hàng và theo dõi tiến trình.</div>
+                    <ul class="postcard__tagbox">
+                        <li class="tag__item"><i class="fas fa-tag mr-2"></i>Hướng Dẫn</li>
+                        <li class="tag__item"><i class="fas fa-clock mr-2"></i>Hỗ Trợ</li>
+                        <li class="tag__item play yellow">
+                            <a href="#"><i class="fas fa-play mr-2"></i>Xem Hướng Dẫn</a>
+                        </li>
+                    </ul>
+                </div>
+            </article>
+        </div>
+    </main>
+    
+    
+      
+      
+      
+      <!--=============== MAIN JS ===============-->
+      <script src="../assets/js/main.js"></script>
+   </body>
+</html>
