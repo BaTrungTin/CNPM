@@ -1,0 +1,83 @@
+﻿@page
+@model quanlyvanchuyencakoi.web3.Pages.Admin.NguoiDung.IndexModel
+@{
+}
+<h2>User</h2>
+<div class="container mt-5">
+<div class="col end-0">
+	<a asp-page="Create" class="btn btn-primary" style="margin:0; margin-bottom:15px">Add New User</a>
+</div>
+<div class="tableindexuser">
+	<table class="table table-hover table-responsive text-dark">
+		<thead>
+			<tr>
+				<th style="width: 1fr; border: 1px solid #ddd">Id User</th>
+				<th style="width: 1fr; border: 1px solid #ddd">UserName</th>
+				<th style="width: 1fr; border: 1px solid #ddd">Password</th>
+				<th style="width: 1fr; border: 1px solid #ddd">Email</th>
+				<th style="width: 1fr; border: 1px solid #ddd">PhoneNumber</th>
+				<th style="width: 1fr; border: 1px solid #ddd">Name</th>
+				<th style="width: 1fr; border: 1px solid #ddd">Address</th>
+				<th style="width: 1fr; border: 1px solid #ddd">Access</th>
+				<th style="width: 1fr; border: 1px solid #ddd">Action</th>
+			</tr>
+		</thead>
+		<tbody>
+			@if (Model != null && Model.users.Any())
+			{
+				@foreach (var user in Model.users)
+				{
+				<tr>
+					<td style="border: 1px solid #ddd;">
+						@user.IdUser
+					</td>
+					<td style="border: 1px solid #ddd;">
+						@user.UserName
+					</td>
+					<td style="border: 1px solid #ddd;">
+						@user.Password
+					</td>
+					<td style="border: 1px solid #ddd;">
+						@user.Email
+					</td>
+					<td style="border: 1px solid #ddd;">
+						@user.PhoneNumber
+					</td>
+					<td style="border: 1px solid #ddd;">
+						@user.Name
+					</td>
+					<td style="border: 1px solid #ddd;">
+						@user.Address
+					</td>
+					<td style="border: 1px solid #ddd;">
+						@user.Access
+					</td>
+					<td style="border: 1px solid #ddd;">
+						<a asp-page="./Edit" asp-route-itemid="@user.IdUser" class="btn btn-warning">Edit</a>
+						<a asp-page="./Delete" asp-route-itemid="@user.IdUser" class="btn btn-danger">Delete</a>
+					</td>
+				</tr>
+				}
+			}
+			else
+			{
+				<tr>
+					<td colspan="5">
+						Dont have data of user
+					</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+</div>
+</div>
+
+<style>
+	.tableindexuser tr:nth-child(odd) {
+		background-color: white;
+	}
+
+	.tableindexuser tr:nth-child(even) {
+		background-color: whitesmoke;
+	}
+</style>

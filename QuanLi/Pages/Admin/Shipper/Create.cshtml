@@ -1,0 +1,42 @@
+﻿@page
+@model quanlyvanchuyencakoi.web3.Pages.Admin.Shipper.CreateModel
+@{
+}
+
+<div class="container mt-5">
+	<h2>@ViewData["Title"]</h2>
+	<div>
+		<form asp-action="Create" method="post">
+			<div class="flex-row">
+				<a>Id Shipper</a>
+				<input asp-for="shipper.IdShipper" class="form-control" />
+				<span asp-validation-for="shipper.IdShipper" class="text-danger"></span>
+			</div>
+			<div class="flex-row">
+				<a>Name Shipper</a>
+				<input asp-for="shipper.NameShipper" class="form-control" />
+				<span asp-validation-for="shipper.NameShipper" class="text-danger"></span>
+			</div>
+			<div class="flex-row">
+				<a>Phone Shipper</a>
+				<input asp-for="shipper.PhoneShipper" type="number" class="form-control" />
+				<span asp-validation-for="shipper.PhoneShipper" class="text-danger"></span>
+			</div>
+			<div class="flex-row">
+				<label asp-for="ImgFileShipper" class="col-form-label-lg"></label>
+				<input asp-for="ImgFileShipper" type="file" class="form-control" />
+				<span asp-validation-for="ImgFileShipper" class="text-danger"></span>
+			</div>
+			<div class="flex-row mt-2" >
+				<input type="submit" value="Create" class="btn btn-primary" />
+				<a class="btn btn-success" asp-page="Index">Back To List</a>
+			</div>
+		</form>
+	</div>
+</div>
+
+@section Scripts {
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+}

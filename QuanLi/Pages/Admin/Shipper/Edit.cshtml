@@ -1,0 +1,25 @@
+﻿@page "{itemid?}"
+@model quanlyvanchuyencakoi.web3.Pages.Admin.Shipper.EditModel
+@{
+}
+
+
+<form method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="NameShipper">Name Shipper</label>
+        <input asp-for="shipper.NameShipper" class="form-control" style="width:50%;" />
+        <span asp-validation-for="shipper.NameShipper" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label for="PhoneShipper">Phone Number</label>
+        <input asp-for="shipper.PhoneShipper" class="form-control" style="width:50%;" />
+        <span asp-validation-for="shipper.PhoneShipper" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label for="ImgShipper">Image Shipper</label>
+        <input asp-for="shipper.ImgShipper" type="file" class="form-control" style="width:50%;" />
+        <span asp-validation-for="shipper.ImgShipper" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a asp-page="./Index" class="btn btn-secondary">Cancel</a>
+</form>

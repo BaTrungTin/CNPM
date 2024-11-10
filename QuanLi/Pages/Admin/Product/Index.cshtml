@@ -1,0 +1,72 @@
+﻿@page
+@model quanlyvanchuyencakoi.web3.Pages.Admin.Product.IndexModel
+@{
+}
+<h2>Product</h2>
+<div class="container mt-5">
+	<h2>@ViewData["Title"]</h2>
+	<div class="col end-0">
+		<a asp-page="Create" class="btn btn-primary" style="margin:0; margin-bottom:15px">Add New Product</a>
+	</div>
+	<div class="tableindexproduct">
+		<table class="table table-hover table-responsive text-dark">
+			<thead>
+				<tr>
+					<th style="width: 180px; border: 1px solid #ddd">Id Product</th>
+					<th style="width: 180px; border: 1px solid #ddd">Name Product</th>
+					<th style="width: 180px; border: 1px solid #ddd">Note</th>
+					<th style="width: 180px; border: 1px solid #ddd">Price</th>
+					<th style="width: 180px; border: 1px solid #ddd">Image Product</th>
+					<th style="width: 180px; border: 1px solid #ddd">Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				@if (Model != null && Model.product.Any())
+				{
+					@foreach (var product in Model.product)
+					{
+					<tr>
+						<td style="border: 1px solid #ddd;">
+							@product.IdProduct
+						</td>
+						<td>
+							@product.NameProduct
+						</td>
+						<td style="border: 1px solid #ddd;">
+							@product.Note
+						</td>
+						<td style="border: 1px solid #ddd;">
+							@product.Price
+						</td>
+						<td style="border: 1px solid #ddd;">
+							<img src="~/admin/images/product/ca1.jpg" alt="Product Image" width="50" height="50" />
+						</td>
+						<td>
+						<a asp-page="./Edit" asp-route-itemid="@product.IdProduct" class="btn btn-warning">Edit</a>
+						<a asp-page="./Delete" asp-route-itemid="@product.IdProduct" class="btn btn-danger">Delete</a>
+						</td>
+					</tr>
+					}
+				}
+				else
+				{
+					<tr>
+						<td colspan="5">
+							Don't have data of product
+						</td>
+					</tr>
+				}
+				</tbody>
+		</table>
+	</div>
+</div>
+
+<style>
+	.tableindexproduct tr:nth-child(odd) {
+		background-color: white;
+	}
+
+	.tableindexproduct tr:nth-child(even) {
+		background-color: whitesmoke;
+	}
+</style>
