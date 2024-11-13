@@ -1,0 +1,101 @@
+﻿@page
+@model KoiDeliveryOrdering.WebApp.Pages.Admin.VoucherList.IndexModel
+@{
+    Layout = "_LayoutAdmin";
+    ViewData["Title"] = "Quản Lý Voucher";
+}
+
+<div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>Danh Sách Voucher</h2>
+        <a href="@Url.Page("/Admin/VoucherList/Create")" class="btn btn-primary mb-3">Thêm Voucher Mới</a>
+    </div>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+    }
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
+    }
+
+    <div class="card">
+        <div class="card-body">
+            <form method="get" class="mb-4">
+                <div class="row">
+                    <div class="col-md-3">
+                        <input type="text" name="SearchString" class="form-control" placeholder="Tìm kiếm theo mã voucher..." />
+                    </div>
+                    <div class="col-md-3">
+                        <select name="Status" class="form-control">
+                            <option value="">Tất cả trạng thái</option>
+                            <option value="Active">Đang hoạt động</option>
+                            <option value="Inactive">Ngừng hoạt động</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <button type="submit" class="btn btn-secondary">Lọc</button>
+                    </div>
+                </div>
+            </form>
+
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Mã Voucher</th>
+                        <th>Giảm Giá</th>
+                        <th>Giá Trị Tối Thiểu</th>
+                        <th>Ngày Bắt Đầu</th>
+                        <th>Ngày Hết Hạn</th>
+                        <th>Trạng Thái</th>
+                        <th>Hành Động</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model.Vouchers.Count > 0)
+                    {
+                        @foreach (var voucher in Model.Vouchers)
+                        {
+                            <tr>
+                                <td>@voucher.VoucherCode</td>
+                                <td>@voucher.DiscountValue.ToString("C")</td>
+                                <td>@voucher.MinimumOrderValue?.ToString("C")</td>
+                                <td>@voucher.StartDate.ToString("dd/MM/yyyy")</td>
+                                <td>@voucher.EndDate.ToString("dd/MM/yyyy")</td>
+                                <td>
+                                    <span class="badge badge-@(voucher.Status == 1 ? "success" : "danger")">
+                                        @(voucher.Status == 1 ? "Đang hoạt động" : "Ngừng hoạt động")
+                                    </span>
+                                </td>
+                                <td>
+                                    <a href="@Url.Page("/Admin/VoucherList/Edit", new { id = voucher.VoucherId })" class="btn btn-warning btn-sm">Chỉnh Sửa</a>
+                                    <form method="post" asp-page-handler="Delete" asp-route-id="@voucher.VoucherId" class="d-inline">
+                                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Bạn có chắc chắn muốn xóa voucher này?');">Xóa</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="7" class="text-center">Không có voucher nào.</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+            <nav aria-label="Page navigation">
+                <ul class="pagination justify-content-center">
+                    @for (var i = 1; i <= Model.TotalPages; i++)
+                    {
+                        <li class="page-item @(i == Model.CurrentPage ? "active" : "")">
+                            <a class="page-link" asp-page="./Index" asp-route-pageIndex="@i">@i</a>
+                        </li>
+                    }
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>

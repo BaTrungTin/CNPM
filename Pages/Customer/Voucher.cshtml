@@ -1,0 +1,43 @@
+﻿@page
+@model KoiDeliveryOrdering.WebApp.Pages.Customer.VoucherModel
+@{
+    Layout = "_LayoutCustomer";
+    ViewData["Title"] = "Khuyến Mại";
+}
+
+<main class="main container" id="main">
+    <div class="container my-5">
+        <h1 class="text-center">Voucher Khuyến Mãi</h1>
+        <section id="voucher-section">
+            @if (Model.Vouchers.Count > 0)
+            {
+                <div class="row">
+                    @foreach (var voucher in Model.Vouchers)
+                    {
+                        <div class="col-12 col-md-4 mb-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Mã Voucher: @voucher.VoucherCode</h5>
+                                    <p class="card-text">Loại Giảm Giá: @voucher.DiscountType</p>
+                                    <p class="card-text">Giảm Giá: @voucher.DiscountValue.ToString("C")</p>
+                                    <p class="card-text">Giá Trị Đơn Hàng Tối Thiểu: @voucher.MinimumOrderValue?.ToString("C")</p>
+                                    <p class="card-text">Ngày Bắt Đầu: @voucher.StartDate.ToString("yyyy-MM-dd")</p>
+                                    <p class="card-text">Ngày Kết Thúc: @voucher.EndDate.ToString("yyyy-MM-dd")</p>
+                                    <p class="card-text">Trạng Thái: Hoạt Động</p>
+                                    <a href="@Url.Page("/Vouchers/VoucherDetails", new { id = voucher.VoucherId })" class="btn btn-info">Xem Chi Tiết</a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            }
+            else
+            {
+                <div id="no-voucher" class="text-center">
+                    <h2>Bạn đang không có voucher</h2>
+                    <p>Hãy quay lại sau để nhận những ưu đãi đặc biệt.</p>
+                </div>
+            }
+        </section>
+    </div>
+</main>

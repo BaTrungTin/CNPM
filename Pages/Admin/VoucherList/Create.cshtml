@@ -1,0 +1,39 @@
+﻿@page
+@model KoiDeliveryOrdering.WebApp.Pages.Admin.VoucherList.CreateModel
+@{
+    Layout = "_LayoutAdmin";
+    ViewData["Title"] = "Thêm Voucher Mới";
+}
+
+<div class="container my-5">
+    <h1 class="text-center">@ViewData["Title"]</h1>
+
+    <form method="post">
+        <div class="mb-3">
+            <label for="voucherCode" class="form-label">Mã Voucher</label>
+            <input type="text" class="form-control" id="voucherCode" name="VoucherCode" value="@Model.Voucher.VoucherCode" readonly />
+        </div>
+
+        <div class="mb-3">
+            <label for="discountValue" class="form-label">Giảm Giá</label>
+            <input type="number" class="form-control" id="discountValue" name="DiscountValue" value="@Model.Voucher.DiscountValue" required min="0.01" step="any" />
+        </div>
+
+        <div class="mb-3">
+            <label for="minimumOrderValue" class="form-label">Giá Trị Đơn Hàng Tối Thiểu</label>
+            <input type="number" class="form-control" id="minimumOrderValue" name="MinimumOrderValue" value="@Model.Voucher.MinimumOrderValue" />
+        </div>
+
+        <div class="mb-3">
+            <label for="startDate" class="form-label">Ngày Bắt Đầu</label>
+            <input type="date" class="form-control" id="startDate" name="StartDate" value="@Model.Voucher.StartDate.ToString("yyyy-MM-dd")" required />
+        </div>
+
+        <div class="mb-3">
+            <label for="endDate" class="form-label">Ngày Hết Hạn</label>
+            <input type="date" class="form-control" id="endDate" name="EndDate" value="@Model.Voucher.EndDate.ToString("yyyy-MM-dd")" required />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Tạo Voucher</button>
+    </form>
+</div>

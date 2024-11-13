@@ -1,0 +1,24 @@
+﻿@page "{orderId:int}"
+@model KoiDeliveryOrdering.WebApp.Pages.Customer.PaymentModel
+@{
+    Layout = "_LayoutCustomer";
+    ViewData["Title"] = "Thanh Toán Chuyển Khoản";
+}
+
+<div class="container my-5">
+    <h1 class="text-center">Thanh Toán Chuyển Khoản</h1>
+
+    <p>Vui lòng thực hiện chuyển khoản theo thông tin dưới đây để hoàn tất đơn hàng:</p>
+    <div class="alert alert-info">
+        <p><strong>Ngân hàng:</strong> Ngân hàng Koi</p>
+        <p><strong>Số tài khoản:</strong> 123456789</p>
+        <p><strong>Chủ tài khoản:</strong> Công ty Koi Delivery</p>
+        <p><strong>Số tiền:</strong> @Model.Order.TotalPrice.ToString("C")</p>
+        <p><strong>Nội dung:</strong> Thanh toán đơn hàng #@Model.Order.OrderId</p>
+    </div>
+
+    <p>Sau khi hoàn tất chuyển khoản, bấm vào nút dưới đây để xác nhận:</p>
+    <form method="post">
+        <button type="submit" class="btn btn-primary">Xác Nhận Đã Thanh Toán</button>
+    </form>
+</div>

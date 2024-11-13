@@ -1,0 +1,39 @@
+﻿@page
+@model KoiDeliveryOrdering.WebApp.Pages.Customer.Express.TrackingModel
+@{
+    Layout = "_LayoutCustomer";
+    ViewData["Title"] = "Danh Sách Đơn Hàng";
+}
+
+<h1>Theo dõi đơn hàng</h1>
+<section id="tracking-section">
+    <table class="tracking-table">
+        <thead>
+            <tr>
+                <th>Mã Đơn</th>
+                <th>Gói Dịch Vụ</th>
+                <th>Ngày Đặt</th>
+                <th>Vận Chuyển</th>
+                <th>Tình Trạng Cá</th>
+                <th>Trạng Thái Thanh Toán</th>
+                <th>Ghi Chú</th>
+                <th>Thành Tiền</th>
+            </tr>
+        </thead>
+        <tbody id="tracking-table-body">
+            @foreach (var order in Model.Orders)
+            {
+                <tr id="order-@order.OrderId">
+                    <td>@order.OrderId</td>
+                    <td>@order.ServicePackage?.PackageName</td>
+                    <td>@order.PickupDate?.ToString("yyyy-MM-dd")</td>
+                    <td>@order.OrderStatus</td>
+                    <td>@order.FishStatus</td>
+                    <td>@order.PaymentStatus</td>
+                    <td>@order.Note</td>
+                    <td>@order.TotalPrice.ToString("N0") VND</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</section>

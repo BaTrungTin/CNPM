@@ -1,0 +1,78 @@
+﻿@page
+@model KoiDeliveryOrdering.WebApp.Pages.Admin.ManageOrdersModel
+@{
+    Layout = "_LayoutAdmin";
+    ViewData["Title"] = "Quản Lý Đơn Hàng";
+}
+
+<div class="container my-5">
+    <h1 class="text-center">Quản Lý Đơn Hàng</h1>
+
+    <!-- Hiển thị thông báo thành công hoặc lỗi -->
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+    }
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
+    }
+
+    <!-- Bộ lọc trạng thái đơn hàng -->
+    <form method="get" class="mb-4">
+        <div class="row">
+            <div class="col-md-3">
+                <select name="StatusFilter" class="form-control" onchange="this.form.submit()">
+                    <option value="">Tất cả trạng thái</option>
+                    <option value="Pending" selected="@(Model.StatusFilter == "Pending")">Chờ xử lý</option>
+                    <option value="Shipped" selected="@(Model.StatusFilter == "Shipped")">Đã giao</option>
+                    <option value="Delivered" selected="@(Model.StatusFilter == "Delivered")">Hoàn thành</option>
+                    <option value="Cancelled" selected="@(Model.StatusFilter == "Cancelled")">Đã hủy</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <button type="submit" class="btn btn-primary">Lọc</button>
+            </div>
+        </div>
+    </form>
+
+    <!-- Danh sách đơn hàng -->
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Khách Hàng</th>
+                <th>Ngày Đặt</th>
+                <th>Trạng Thái</th>
+                <th>Tổng Giá</th>
+                <th>Hành Động</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var order in Model.Orders)
+            {
+                <tr>
+                    <td>@order.OrderId</td>
+                    <td>@order.CustomerId</td>
+                    <td>@order.PickupDate?.ToString("dd/MM/yyyy")</td>
+                    <td>@order.OrderStatus</td>
+                    <td>@order.TotalPrice.ToString("C")</td>
+                    <td>
+                        <form method="post" asp-page-handler="UpdateStatus" class="d-inline">
+                            <input type="hidden" name="orderId" value="@order.OrderId" />
+                            <select name="newStatus" class="form-select form-select-sm" onchange="this.form.submit()">
+                                <option value="Pending" selected="@(order.OrderStatus == "Pending")">Chờ xử lý</option>
+                                <option value="Shipped" selected="@(order.OrderStatus == "Shipped")">Đã giao</option>
+                                <option value="Delivered" selected="@(order.OrderStatus == "Delivered")">Hoàn thành</option>
+                                <option value="Cancelled" selected="@(order.OrderStatus == "Cancelled")">Đã hủy</option>
+                            </select>
+                        </form>
+                        <form method="post" asp-page-handler="DeleteOrder" asp-route-orderId="@order.OrderId" class="d-inline">
+                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Bạn có chắc chắn muốn xóa đơn hàng này?');">Xóa</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

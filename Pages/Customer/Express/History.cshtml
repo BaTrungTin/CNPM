@@ -1,0 +1,33 @@
+﻿@page
+@model KoiDeliveryOrdering.WebApp.Pages.Customer.Express.HistoryModel
+@{
+    ViewData["Title"] = "Lịch Sử Đặt Đơn";
+    Layout = "_LayoutCustomer";
+}
+
+<section id="history-section">
+    <!-- Khi không có đơn hàng -->
+    <div id="no-history" class="text-center" style="display: @(Model.Orders.Count == 0 ? "block" : "none");">
+        <h2>Lịch sử đơn hàng</h2>
+        <p>Không có đơn hàng nào trong lịch sử.</p>
+    </div>
+
+    <!-- Khi có đơn hàng trong lịch sử -->
+    <div id="history-list" style="display: @(Model.Orders.Count > 0 ? "block" : "none");">
+        @foreach (var order in Model.Orders)
+        {
+            <div class="history-card">
+                <div class="order-title">Đơn Hàng #@order.OrderId</div>
+                <div class="order-description">Vận chuyển từ @order.PickupAddress đến @order.DeliveryAddress</div>
+                <div class="order-status @(order.OrderStatus.ToLower())">@order.OrderStatus</div>
+                <div class="order-detail">
+                    <p><strong>Trọng Lượng:</strong> @order.Weight kg</p>
+                    <p><strong>Số Lượng:</strong> @order.Quantity</p>
+                    <p><strong>Tổng Giá:</strong> @order.TotalPrice VND</p>
+                    <p><strong>Phương Thức Thanh Toán:</strong> @order.PaymentMethod</p>
+                </div>
+                <button class="order-detail-btn" onclick="window.location.href='/Customer/Express/Details?orderId=@order.OrderId'">Xem Chi Tiết</button>
+            </div>
+        }
+    </div>
+</section>
