@@ -1,0 +1,74 @@
+﻿@page
+@model quanlyvanchuyencakoi.web3.Pages.Admin.DashBoard.IndexModel
+@{
+    Layout = "_AdminLayout";
+}
+
+<h1>Revenue</h1>
+
+<<div class="container">
+    <h3>Monthly Revenue</h3>
+    <canvas id="revenueChart" width="400" height="200"></canvas>
+</div>
+
+@section Scripts {
+    <script>
+        // Dữ liệu doanh thu giả từ tháng 6 đến tháng hiện tại
+        const revenueData = [1200, 1500, 1800, 2100, 2500, 2700, 3000]; // Ví dụ từ tháng 6 đến tháng 12
+
+        // Tạo nhãn cho các tháng từ tháng 6 đến tháng hiện tại
+        const monthLabels = ['June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+        // Cấu hình biểu đồ cột
+        const ctx = document.getElementById('revenueChart').getContext('2d');
+        const revenueChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: monthLabels,
+                datasets: [{
+                    label: 'Revenue ($)',
+                    data: revenueData,
+                    backgroundColor: 'rgba(75, 192, 192, 0.6)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            // Hiển thị tooltip khi di chuột vào từng cột
+                            label: function (context) {
+                                let label = context.dataset.label || '';
+                                if (label) {
+                                    label += ': ';
+                                }
+                                label += `$${context.raw}`; // Hiển thị dữ liệu doanh thu với định dạng $
+                                return label;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Revenue ($)'
+                        },
+                        ticks: {
+                            stepSize: 500
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Months'
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+}

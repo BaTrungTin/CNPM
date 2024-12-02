@@ -1,0 +1,34 @@
+﻿@page 
+@model quanlyvanchuyencakoi.web3.Pages.Admin.Product.EditModel
+@{
+}
+
+<h2>Edit product</h2>
+
+<form method="post">
+    <div class="form-group">
+        <label for="NameProduct">Name Product</label>
+        <input asp-for="Product.NameProduct" class="form-control" />
+        <span asp-validation-for="Product.NameProduct" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="Note">Note</label>
+        <input asp-for="Product.Note" class="form-control" />
+        <span asp-validation-for="Product.Note" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="Price">Price</label>
+        <input asp-for="Product.Price" class="form-control" />
+        <span asp-validation-for="Product.Price" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="ImgProduct">Imgage Product</label>
+        <input asp-for="Product.ImgProduct" class="form-control" />
+        <span asp-validation-for="Product.ImgProduct" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+</form>
