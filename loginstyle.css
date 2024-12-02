@@ -1,0 +1,46 @@
+body{
+    font-family: 'Raleway','sans-serif';
+    background:url(image/beyond\ the\ other\ side.gif);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    
+}
+
+.headertext-h2{
+    font-size: 250%;
+    font-family:"Arizonia","Sans-serif";
+}
+.headertext-h3{
+    font-size: 200%;
+}
+.feature-img{
+    width: 250px;
+}
+.box-area{
+    width: 400px;
+    text-align: center;
+    background-color:rgba(49, 155, 192, 0.7);
+    
+
+}
+.right-box{
+    padding:40px 30px 40px 40px;
+} 
+::placeholder{
+    font-size:16px;
+}
+.signup{
+    font-weight: bolder;
+}
+
+@media only screen and (max-width:768px){
+    .box-area{
+        margin:0 10px
+    }
+  
+    .right-box{
+        padding:20px
+    }
+}

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+   <html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <!--=============== REMIXICONS ===============-->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+      <!--=============== CSS ===============-->
+      <link rel="stylesheet" href="../assets/css/barstyle.css">
+      <link rel="stylesheet" href="../assets/css/historyGuest.css">
+      <title>Dashboard</title>
+   </head>
+   <body>
+      <!--=============== HEADER ===============-->
+      <header class="header" id="header">
+         <div class="header__container">
+            <a href="#" class="header__logo">
+               <i class="ri-cloud-fill"></i>
+               <span>Koi fish</span>
+            </a>
+            
+            <button class="header__toggle" id="header-toggle">
+               <i class="ri-menu-line"></i>
+            </button>
+         </div>
+      </header>
+
+      <!--=============== SIDEBAR ===============-->
+      <nav class="sidebar" id="sidebar">
+        <div class="sidebar__container">
+           <div class="sidebar__user">
+              <div class="sidebar__img">
+                 <img src="../assets/img/perfil.png" alt="User Profile">
+              </div>
+  
+              <div class="sidebar__info">
+                 <h3>User Name</h3>
+                 <span>user@email.com</span>
+              </div>
+           </div>
+  
+           <div class="sidebar__content">
+              <div>
+                 <!-- SERVICES SECTION -->
+                 <h3 class="sidebar__title " style="color: black;">SERVICES</h3>
+                 <div class="sidebar__list">
+                    <a href="guest.html" class="sidebar__link">
+                       <i class="ri-home-3-line"></i>
+                       <span>Home</span>
+                    </a>
+  
+                   
+                    <a href="tracking.html" class="sidebar__link">
+                       <i class="ri-truck-fill"></i>
+                       <span>Theo Dõi Đơn Hàng</span>
+                    </a>
+  
+                    <a href="voucher.html" class="sidebar__link ">
+                       <i class="ri-price-tag-fill"></i>
+                       <span>Khuyến Mại</span>
+                    </a>
+  
+                    <a href="GuestEdit.html" class="sidebar__link">
+                       <i class="ri-user-3-fill"></i>
+                       <span>Tài Khoản</span>
+                    </a>
+                 </div>
+                 <br/>
+                 <!-- EXPRESS SECTION -->
+                 <h3 class="sidebar__title" style="color: black;">EXPRESS</h3>
+                 <div class="sidebar__list">
+                    
+  
+                    <a href="datvanchuyen.html" class="sidebar__link">
+                     <i class="ri-file-list-3-fill"></i>
+                     <span>Đặt Vận Chuyển</span>
+                  </a>
+
+  
+                    <a href="history.html" class="sidebar__link active-link">
+                       <i class="ri-file-list-2-fill"></i>
+                       <span>lịch sử đặt hàng</span>
+                    </a>
+                 </div>
+              </div>
+           </div>
+  
+           <div class="sidebar__actions">
+              <button class="sidebar__link">
+                 <i class="ri-logout-box-r-fill"></i>
+                 <span>Đăng Xuất</span>
+              </button>
+           </div>
+        </div>
+     </nav>
+  
+
+      <!--=============== MAIN ===============-->
+      <main class="main container" id="main">
+        <section id="history-section">
+            <!-- Khi không có đơn hàng -->
+            <div id="no-history" class="text-center">
+                <h2>Lịch sử đơn hàng</h2>
+            </div>
+
+            <!-- Khi có đơn hàng trong lịch sử -->
+            <div id="history-list">
+                <!-- Ví dụ đơn hàng -->
+                <div class="history-card">
+                    <div class="order-title">Đơn Hàng #00123</div>
+                    <div class="order-description">Vận chuyển koi cá từ Nhật Bản đến Việt Nam.</div>
+                    <div class="order-status shipped">Đã Giao</div>
+                    <button class="order-detail-btn">Xem Chi Tiết</button>
+                </div>
+
+                <div class="history-card">
+                    <div class="order-title">Đơn Hàng #00124</div>
+                    <div class="order-description">Vận chuyển koi cá từ Nhật Bản đến Việt Nam.</div>
+                    <div class="order-status in-progress">Đang Xử Lý</div>
+                    <button class="order-detail-btn">Xem Chi Tiết</button>
+                </div>
+
+                <div class="history-card">
+                    <div class="order-title">Đơn Hàng #00125</div>
+                    <div class="order-description">Vận chuyển koi cá từ Nhật Bản đến Việt Nam.</div>
+                    <div class="order-status cancelled">Đã Hủy</div>
+                    <button class="order-detail-btn">Xem Chi Tiết</button>
+                </div>
+            </div>
+        </section>
+          
+        </main>
+      
+      <!--=============== MAIN JS ===============-->
+      <script src="../assets/js/main.js"></script>
+   </body>
+</html>
